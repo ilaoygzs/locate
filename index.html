@@ -5,7 +5,7 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<style type="text/css">
 	
-	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"Î¢ÈíÑÅºÚ";}
+	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"å¾®è½¯é›…é»‘";}
 	.toolBar {
 position:absolute;
 top:30px;
@@ -28,7 +28,7 @@ background:transparent;
    
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Iflg0apPtnMCM3Bv2DKXm3axwNgX6DS2"></script>
 	<!-- <script type="text/javascript" src="./DistanceTool.js"></script> -->
-	<title>¶¨Î»ºÍ²â¾à£¨Õò½­µØÕğÌ¨£©</title>
+	<title>å®šä½å’Œæµ‹è·</title>
 </head>
 <body> 
 <div style="width:100%;height:100%">
@@ -36,20 +36,20 @@ background:transparent;
 	</div>
 	<div class="toolBar">
 	<button  id="print"type="button" class="btn btn-default" style="z-index : 99"data-toggle="tooltip" 
-   data-placement="top" title="´òÓ¡">
-   ´òÓ¡
+   data-placement="top" title="æ‰“å°">
+   æ‰“å°
 </button>
 <button type="button"  id="location"class="btn btn-default" style="z-index : 99" 
    data-toggle="modal" 
-   data-target="#myModal" title="¶¨Î»">
-   ¶¨Î»
+   data-target="#myModal" title="å®šä½">
+   å®šä½
 </button>
 <button type="button"  id="clear"class="btn btn-default" style="z-index : 99" data-toggle="tooltip" 
-data-placement="top" title="Çå³ı">
-   Çå³ı
+data-placement="top" title="æ¸…é™¤">
+   æ¸…é™¤
 </button>
-<button type="button" id="measure" class="btn btn-default" style="z-index: 99;" data-toggle="tooltip" data-placement="top" title="²âÁ¿"> ²âÁ¿</button>
-<button type="button" id="open-dialog-btn" class="btn btn-default" style="z-index : 99" data-toggle="tooltip">ÕğÖĞµ½Õò½­¾àÀë</button>
+<button type="button" id="measure" class="btn btn-default" style="z-index: 99;" data-toggle="tooltip" data-placement="top" title="æµ‹é‡"> æµ‹é‡</button>
+<button type="button" id="open-dialog-btn" class="btn btn-default" style="z-index : 99" data-toggle="tooltip">éœ‡ä¸­è·ç¦»</button>
 </div>
 </div>
 <div class="modal fade"  id="myModal" tabindex="-1" role="dialog" 
@@ -62,27 +62,27 @@ data-placement="top" title="Çå³ı">
                   &times;
             </button>
             <h4 class="modal-title" id="myModalLabel">
-               ¶¨Î»µ½Ö¸¶¨¾­Î³¶È
+               å®šä½åˆ°æŒ‡å®šç»çº¬åº¦
             </h4>
          </div>
          <div class="modal-body">
              <div class="input-group">
-         <span class="input-group-addon">¶«¾­</span>
-         <input id="X"type="text" class="form-control" placeholder="¶«¾­£¬µ¥Î»£º¶È">
+         <span class="input-group-addon">ä¸œç»</span>
+         <input id="X"type="text" class="form-control" placeholder="ä¸œç»ï¼Œå•ä½ï¼šåº¦">
       </div>
       <br>
 
       <div class="input-group">
-	  <span class="input-group-addon">±±Î³</span>
-         <input id="Y"type="text" class="form-control" placeholder="±±Î³£¬µ¥Î»£º¶È">
+	  <span class="input-group-addon">åŒ—çº¬</span>
+         <input id="Y"type="text" class="form-control" placeholder="åŒ—çº¬ï¼Œå•ä½ï¼šåº¦">
       </div>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" 
-               data-dismiss="modal">È¡Ïû
+               data-dismiss="modal">å–æ¶ˆ
             </button>
             <button type="button" class="btn btn-primary" id="btnOK">
-               ¶¨Î»
+               å®šä½
             </button>
 
          </div>
@@ -90,17 +90,17 @@ data-placement="top" title="Çå³ı">
 </div><!-- /.modal -->
 </div>
 
-<!-- ¼ÆËã¶Ô»°¿ò -->
+<!-- è®¡ç®—å¯¹è¯æ¡† -->
 <dialog id="calculation-dialog">
-  <h2>ÊäÈëÕğÖĞ¾­Î³¶È</h2>
-  <label for="lat1">Î³¶È1: </label><input type="number" id="lat1" step="any"><br>
-  <label for="lon1">¾­¶È1: </label><input type="number" id="lon1" step="any"><br>
-  <label for="lat2">Î³¶È2: </label><input type="number" id="lat2" value="32.19" step="any"><br>
-  <label for="lon2">¾­¶È2: </label><input type="number" id="lon2" value="119.43" step="any"><br>
-  <label>Ä¬ÈÏ¾­Î³¶È2ÎªÕò½­£¬¿É×ÔĞĞĞŞ¸Ä </label><br>
-  <button onclick="performCalculation()">¼ÆËã¾àÀë</button>
+  <h2>è¾“å…¥éœ‡ä¸­ç»çº¬åº¦</h2>
+  <label for="lat1">çº¬åº¦1: </label><input type="number" id="lat1" step="any"><br>
+  <label for="lon1">ç»åº¦1: </label><input type="number" id="lon1" step="any"><br>
+  <label for="lat2">çº¬åº¦2: </label><input type="number" id="lat2" value="32.19" step="any"><br>
+  <label for="lon2">ç»åº¦2: </label><input type="number" id="lon2" value="119.43" step="any"><br>
+  <label>é»˜è®¤ç»çº¬åº¦2ä¸ºé•‡æ±Ÿï¼Œå¯è‡ªè¡Œä¿®æ”¹ </label><br>
+  <button onclick="performCalculation()">è®¡ç®—è·ç¦»</button>
   <p id="result"></p>
-  <button onclick="event.target.closest('dialog').close()">¹Ø±Õ</button>
+  <button onclick="event.target.closest('dialog').close()">å…³é—­</button>
 </dialog>
 
 </body>
@@ -108,38 +108,38 @@ data-placement="top" title="Çå³ı">
 
 <script type="text/javascript">
 /**
- * @fileoverview °Ù¶ÈµØÍ¼µÄ²â¾à¹¤¾ßÀà£¬¶ÔÍâ¿ª·Å¡£
- * ÔÊĞíÓÃ»§ÔÚµØÍ¼ÉÏµã»÷Íê³É¾àÀëµÄ²âÁ¿¡£
- * Ê¹ÓÃÕß¿ÉÒÔ×Ô¶¨Òå²â¾àÏß¶ÎµÄÏà¹ØÑùÊ½£¬ÀıÈçÏß¿í¡¢ÑÕÉ«¡¢²â¾à½á¹ûËùÓÃµÄµ¥Î»ÖÆµÈµÈ¡£
- * Ö÷Èë¿ÚÀàÊÇ<a href="symbols/BMapLib.DistanceTool.html">DistanceTool</a>£¬
- * »ùÓÚBaidu Map API 1.2¡£
+ * @fileoverview ç™¾åº¦åœ°å›¾çš„æµ‹è·å·¥å…·ç±»ï¼Œå¯¹å¤–å¼€æ”¾ã€‚
+ * å…è®¸ç”¨æˆ·åœ¨åœ°å›¾ä¸Šç‚¹å‡»å®Œæˆè·ç¦»çš„æµ‹é‡ã€‚
+ * ä½¿ç”¨è€…å¯ä»¥è‡ªå®šä¹‰æµ‹è·çº¿æ®µçš„ç›¸å…³æ ·å¼ï¼Œä¾‹å¦‚çº¿å®½ã€é¢œè‰²ã€æµ‹è·ç»“æœæ‰€ç”¨çš„å•ä½åˆ¶ç­‰ç­‰ã€‚
+ * ä¸»å…¥å£ç±»æ˜¯<a href="symbols/BMapLib.DistanceTool.html">DistanceTool</a>ï¼Œ
+ * åŸºäºBaidu Map API 1.2ã€‚
  *
  * @author Baidu Map Api Group 
  * @version 1.2
  */
  
 /** 
- * @namespace BMapµÄËùÓĞlibraryÀà¾ù·ÅÔÚBMapLibÃüÃû¿Õ¼äÏÂ
+ * @namespace BMapçš„æ‰€æœ‰libraryç±»å‡æ”¾åœ¨BMapLibå‘½åç©ºé—´ä¸‹
  */
 var BMapLib = window.BMapLib = BMapLib || {};
  
 (function() {
     /**
-     * ÉùÃ÷baidu°ü
+     * å£°æ˜baiduåŒ…
      */
     var baidu = baidu || {guid : "$BAIDU$"};
     (function() {
-        // Ò»Ğ©Ò³Ãæ¼¶±ğÎ¨Ò»µÄÊôĞÔ£¬ĞèÒª¹ÒÔØÔÚwindow[baidu.guid]ÉÏ
+        // ä¸€äº›é¡µé¢çº§åˆ«å”¯ä¸€çš„å±æ€§ï¼Œéœ€è¦æŒ‚è½½åœ¨window[baidu.guid]ä¸Š
         window[baidu.guid] = {};
  
         /**
-         * ½«Ô´¶ÔÏóµÄËùÓĞÊôĞÔ¿½±´µ½Ä¿±ê¶ÔÏóÖĞ
+         * å°†æºå¯¹è±¡çš„æ‰€æœ‰å±æ€§æ‹·è´åˆ°ç›®æ ‡å¯¹è±¡ä¸­
          * @name baidu.extend
          * @function
          * @grammar baidu.extend(target, source)
-         * @param {Object} target Ä¿±ê¶ÔÏó
-         * @param {Object} source Ô´¶ÔÏó
-         * @returns {Object} Ä¿±ê¶ÔÏó
+         * @param {Object} target ç›®æ ‡å¯¹è±¡
+         * @param {Object} source æºå¯¹è±¡
+         * @returns {Object} ç›®æ ‡å¯¹è±¡
          */
         baidu.extend = function (target, source) {
             for (var p in source) {
@@ -153,16 +153,16 @@ var BMapLib = window.BMapLib = BMapLib || {};
         /**
          * @ignore
          * @namespace
-         * @baidu.lang ¶ÔÓïÑÔ²ãÃæµÄ·â×°£¬°üÀ¨ÀàĞÍÅĞ¶Ï¡¢Ä£¿éÀ©Õ¹¡¢¼Ì³Ğ»ùÀàÒÔ¼°¶ÔÏó×Ô¶¨ÒåÊÂ¼şµÄÖ§³Ö¡£
-         * @property guid ¶ÔÏóµÄÎ¨Ò»±êÊ¶
+         * @baidu.lang å¯¹è¯­è¨€å±‚é¢çš„å°è£…ï¼ŒåŒ…æ‹¬ç±»å‹åˆ¤æ–­ã€æ¨¡å—æ‰©å±•ã€ç»§æ‰¿åŸºç±»ä»¥åŠå¯¹è±¡è‡ªå®šä¹‰äº‹ä»¶çš„æ”¯æŒã€‚
+         * @property guid å¯¹è±¡çš„å”¯ä¸€æ ‡è¯†
         */
         baidu.lang = baidu.lang || {};
  
         /**
-         * ·µ»ØÒ»¸öµ±Ç°Ò³ÃæµÄÎ¨Ò»±êÊ¶×Ö·û´®¡£
+         * è¿”å›ä¸€ä¸ªå½“å‰é¡µé¢çš„å”¯ä¸€æ ‡è¯†å­—ç¬¦ä¸²ã€‚
          * @function
          * @grammar baidu.lang.guid()
-         * @returns {String} µ±Ç°Ò³ÃæµÄÎ¨Ò»±êÊ¶×Ö·û´®
+         * @returns {String} å½“å‰é¡µé¢çš„å”¯ä¸€æ ‡è¯†å­—ç¬¦ä¸²
          */
         baidu.lang.guid = function() {
             return "TANGRAM__" + (window[baidu.guid]._counter ++).toString(36);
@@ -171,21 +171,21 @@ var BMapLib = window.BMapLib = BMapLib || {};
         window[baidu.guid]._counter = window[baidu.guid]._counter || 1;
  
         /**
-         * ËùÓĞÀàµÄÊµÀıµÄÈİÆ÷
-         * keyÎªÃ¿¸öÊµÀıµÄguid
+         * æ‰€æœ‰ç±»çš„å®ä¾‹çš„å®¹å™¨
+         * keyä¸ºæ¯ä¸ªå®ä¾‹çš„guid
          */
         window[baidu.guid]._instances = window[baidu.guid]._instances || {};
  
         /**
-         * Tangram¼Ì³Ğ»úÖÆÌá¹©µÄÒ»¸ö»ùÀà£¬ÓÃ»§¿ÉÒÔÍ¨¹ı¼Ì³Ğbaidu.lang.ClassÀ´»ñÈ¡ËüµÄÊôĞÔ¼°·½·¨¡£
+         * Tangramç»§æ‰¿æœºåˆ¶æä¾›çš„ä¸€ä¸ªåŸºç±»ï¼Œç”¨æˆ·å¯ä»¥é€šè¿‡ç»§æ‰¿baidu.lang.Classæ¥è·å–å®ƒçš„å±æ€§åŠæ–¹æ³•ã€‚
          * @function
          * @name baidu.lang.Class
          * @grammar baidu.lang.Class(guid)
-         * @param {string} guid	¶ÔÏóµÄÎ¨Ò»±êÊ¶
+         * @param {string} guid	å¯¹è±¡çš„å”¯ä¸€æ ‡è¯†
          * @meta standard
-         * @remark baidu.lang.ClassºÍËüµÄ×ÓÀàµÄÊµÀı¾ù°üº¬Ò»¸öÈ«¾ÖÎ¨Ò»µÄ±êÊ¶guid¡£
-         * guidÊÇÔÚ¹¹Ôìº¯ÊıÖĞÉú³ÉµÄ£¬Òò´Ë£¬¼Ì³Ğ×Ôbaidu.lang.ClassµÄÀàÓ¦¸ÃÖ±½Ó»òÕß¼ä½Óµ÷ÓÃËüµÄ¹¹Ôìº¯Êı¡£<br>
-         * baidu.lang.ClassµÄ¹¹Ôìº¯ÊıÖĞ²úÉúguidµÄ·½Ê½¿ÉÒÔ±£Ö¤guidµÄÎ¨Ò»ĞÔ£¬¼°Ã¿¸öÊµÀı¶¼ÓĞÒ»¸öÈ«¾ÖÎ¨Ò»µÄguid¡£
+         * @remark baidu.lang.Classå’Œå®ƒçš„å­ç±»çš„å®ä¾‹å‡åŒ…å«ä¸€ä¸ªå…¨å±€å”¯ä¸€çš„æ ‡è¯†guidã€‚
+         * guidæ˜¯åœ¨æ„é€ å‡½æ•°ä¸­ç”Ÿæˆçš„ï¼Œå› æ­¤ï¼Œç»§æ‰¿è‡ªbaidu.lang.Classçš„ç±»åº”è¯¥ç›´æ¥æˆ–è€…é—´æ¥è°ƒç”¨å®ƒçš„æ„é€ å‡½æ•°ã€‚<br>
+         * baidu.lang.Classçš„æ„é€ å‡½æ•°ä¸­äº§ç”Ÿguidçš„æ–¹å¼å¯ä»¥ä¿è¯guidçš„å”¯ä¸€æ€§ï¼ŒåŠæ¯ä¸ªå®ä¾‹éƒ½æœ‰ä¸€ä¸ªå…¨å±€å”¯ä¸€çš„guidã€‚
          */
         baidu.lang.Class = function(guid) {
             this.guid = guid || baidu.lang.guid();
@@ -195,42 +195,42 @@ var BMapLib = window.BMapLib = BMapLib || {};
         window[baidu.guid]._instances = window[baidu.guid]._instances || {};
  
         /**
-         * ÅĞ¶ÏÄ¿±ê²ÎÊıÊÇ·ñstringÀàĞÍ»òString¶ÔÏó
+         * åˆ¤æ–­ç›®æ ‡å‚æ•°æ˜¯å¦stringç±»å‹æˆ–Stringå¯¹è±¡
          * @name baidu.lang.isString
          * @function
          * @grammar baidu.lang.isString(source)
-         * @param {Any} source Ä¿±ê²ÎÊı
+         * @param {Any} source ç›®æ ‡å‚æ•°
          * @shortcut isString
          * @meta standard
          *             
-         * @returns {boolean} ÀàĞÍÅĞ¶Ï½á¹û
+         * @returns {boolean} ç±»å‹åˆ¤æ–­ç»“æœ
          */
         baidu.lang.isString = function (source) {
             return '[object String]' == Object.prototype.toString.call(source);
         };
  
         /**
-         * ÅĞ¶ÏÄ¿±ê²ÎÊıÊÇ·ñÎªfunction»òFunctionÊµÀı
+         * åˆ¤æ–­ç›®æ ‡å‚æ•°æ˜¯å¦ä¸ºfunctionæˆ–Functionå®ä¾‹
          * @name baidu.lang.isFunction
          * @function
          * @grammar baidu.lang.isFunction(source)
-         * @param {Any} source Ä¿±ê²ÎÊı
-         * @returns {boolean} ÀàĞÍÅĞ¶Ï½á¹û
+         * @param {Any} source ç›®æ ‡å‚æ•°
+         * @returns {boolean} ç±»å‹åˆ¤æ–­ç»“æœ
          */
         baidu.lang.isFunction = function (source) {
             return '[object Function]' == Object.prototype.toString.call(source);
         };
  
         /**
-         * ÖØÔØÁËÄ¬ÈÏµÄtoString·½·¨£¬Ê¹µÃ·µ»ØĞÅÏ¢¸ü¼Ó×¼È·Ò»Ğ©¡£
-         * @return {string} ¶ÔÏóµÄString±íÊ¾ĞÎÊ½
+         * é‡è½½äº†é»˜è®¤çš„toStringæ–¹æ³•ï¼Œä½¿å¾—è¿”å›ä¿¡æ¯æ›´åŠ å‡†ç¡®ä¸€äº›ã€‚
+         * @return {string} å¯¹è±¡çš„Stringè¡¨ç¤ºå½¢å¼
          */
         baidu.lang.Class.prototype.toString = function(){
             return "[object " + (this._className || "Object" ) + "]";
         };
  
         /**
-         * ÊÍ·Å¶ÔÏóËù³ÖÓĞµÄ×ÊÔ´£¬Ö÷ÒªÊÇ×Ô¶¨ÒåÊÂ¼ş¡£
+         * é‡Šæ”¾å¯¹è±¡æ‰€æŒæœ‰çš„èµ„æºï¼Œä¸»è¦æ˜¯è‡ªå®šä¹‰äº‹ä»¶ã€‚
          * @name dispose
          * @grammar obj.dispose()
          */
@@ -245,14 +245,14 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ×Ô¶¨ÒåµÄÊÂ¼ş¶ÔÏó¡£
+         * è‡ªå®šä¹‰çš„äº‹ä»¶å¯¹è±¡ã€‚
          * @function
          * @name baidu.lang.Event
          * @grammar baidu.lang.Event(type[, target])
-         * @param {string} type	 ÊÂ¼şÀàĞÍÃû³Æ¡£ÎªÁË·½±ãÇø·ÖÊÂ¼şºÍÒ»¸öÆÕÍ¨µÄ·½·¨£¬ÊÂ¼şÀàĞÍÃû³Æ±ØĞëÒÔ"on"(Ğ¡Ğ´)¿ªÍ·¡£
-         * @param {Object} [target]´¥·¢ÊÂ¼şµÄ¶ÔÏó
+         * @param {string} type	 äº‹ä»¶ç±»å‹åç§°ã€‚ä¸ºäº†æ–¹ä¾¿åŒºåˆ†äº‹ä»¶å’Œä¸€ä¸ªæ™®é€šçš„æ–¹æ³•ï¼Œäº‹ä»¶ç±»å‹åç§°å¿…é¡»ä»¥"on"(å°å†™)å¼€å¤´ã€‚
+         * @param {Object} [target]è§¦å‘äº‹ä»¶çš„å¯¹è±¡
          * @meta standard
-         * @remark ÒıÈë¸ÃÄ£¿é£¬»á×Ô¶¯ÎªClassÒıÈë3¸öÊÂ¼şÀ©Õ¹·½·¨£ºaddEventListener¡¢removeEventListenerºÍdispatchEvent¡£
+         * @remark å¼•å…¥è¯¥æ¨¡å—ï¼Œä¼šè‡ªåŠ¨ä¸ºClasså¼•å…¥3ä¸ªäº‹ä»¶æ‰©å±•æ–¹æ³•ï¼šaddEventListenerã€removeEventListenerå’ŒdispatchEventã€‚
          * @see baidu.lang.Class
          */
         baidu.lang.Event = function (type, target) {
@@ -263,12 +263,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ×¢²á¶ÔÏóµÄÊÂ¼ş¼àÌıÆ÷¡£ÒıÈëbaidu.lang.Eventºó£¬ClassµÄ×ÓÀàÊµÀı²Å»á»ñµÃ¸Ã·½·¨¡£
+         * æ³¨å†Œå¯¹è±¡çš„äº‹ä»¶ç›‘å¬å™¨ã€‚å¼•å…¥baidu.lang.Eventåï¼ŒClassçš„å­ç±»å®ä¾‹æ‰ä¼šè·å¾—è¯¥æ–¹æ³•ã€‚
          * @grammar obj.addEventListener(type, handler[, key])
-         * @param 	{string}   type         ×Ô¶¨ÒåÊÂ¼şµÄÃû³Æ
-         * @param 	{Function} handler      ×Ô¶¨ÒåÊÂ¼ş±»´¥·¢Ê±Ó¦¸Ãµ÷ÓÃµÄ»Øµ÷º¯Êı
-         * @param 	{string}   [key]		ÎªÊÂ¼ş¼àÌıº¯ÊıÖ¸¶¨µÄÃû³Æ£¬¿ÉÔÚÒÆ³ıÊ±Ê¹ÓÃ¡£Èç¹û²»Ìá¹©£¬·½·¨»áÄ¬ÈÏÎªËüÉú³ÉÒ»¸öÈ«¾ÖÎ¨Ò»µÄkey¡£
-         * @remark 	ÊÂ¼şÀàĞÍÇø·Ö´óĞ¡Ğ´¡£Èç¹û×Ô¶¨ÒåÊÂ¼şÃû³Æ²»ÊÇÒÔĞ¡Ğ´"on"¿ªÍ·£¬¸Ã·½·¨»á¸øËü¼ÓÉÏ"on"ÔÙ½øĞĞÅĞ¶Ï£¬¼´"click"ºÍ"onclick"»á±»ÈÏÎªÊÇÍ¬Ò»ÖÖÊÂ¼ş¡£ 
+         * @param 	{string}   type         è‡ªå®šä¹‰äº‹ä»¶çš„åç§°
+         * @param 	{Function} handler      è‡ªå®šä¹‰äº‹ä»¶è¢«è§¦å‘æ—¶åº”è¯¥è°ƒç”¨çš„å›è°ƒå‡½æ•°
+         * @param 	{string}   [key]		ä¸ºäº‹ä»¶ç›‘å¬å‡½æ•°æŒ‡å®šçš„åç§°ï¼Œå¯åœ¨ç§»é™¤æ—¶ä½¿ç”¨ã€‚å¦‚æœä¸æä¾›ï¼Œæ–¹æ³•ä¼šé»˜è®¤ä¸ºå®ƒç”Ÿæˆä¸€ä¸ªå…¨å±€å”¯ä¸€çš„keyã€‚
+         * @remark 	äº‹ä»¶ç±»å‹åŒºåˆ†å¤§å°å†™ã€‚å¦‚æœè‡ªå®šä¹‰äº‹ä»¶åç§°ä¸æ˜¯ä»¥å°å†™"on"å¼€å¤´ï¼Œè¯¥æ–¹æ³•ä¼šç»™å®ƒåŠ ä¸Š"on"å†è¿›è¡Œåˆ¤æ–­ï¼Œå³"click"å’Œ"onclick"ä¼šè¢«è®¤ä¸ºæ˜¯åŒä¸€ç§äº‹ä»¶ã€‚ 
          */
         baidu.lang.Class.prototype.addEventListener = function (type, handler, key) {
             if (!baidu.lang.isFunction(handler)) {
@@ -292,11 +292,11 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
          
         /**
-         * ÒÆ³ı¶ÔÏóµÄÊÂ¼ş¼àÌıÆ÷¡£ÒıÈëbaidu.lang.Eventºó£¬ClassµÄ×ÓÀàÊµÀı²Å»á»ñµÃ¸Ã·½·¨¡£
+         * ç§»é™¤å¯¹è±¡çš„äº‹ä»¶ç›‘å¬å™¨ã€‚å¼•å…¥baidu.lang.Eventåï¼ŒClassçš„å­ç±»å®ä¾‹æ‰ä¼šè·å¾—è¯¥æ–¹æ³•ã€‚
          * @grammar obj.removeEventListener(type, handler)
-         * @param {string}   type     ÊÂ¼şÀàĞÍ
-         * @param {Function|string} handler  ÒªÒÆ³ıµÄÊÂ¼ş¼àÌıº¯Êı»òÕß¼àÌıº¯ÊıµÄkey
-         * @remark 	Èç¹ûµÚ¶ş¸ö²ÎÊıhandlerÃ»ÓĞ±»°ó¶¨µ½¶ÔÓ¦µÄ×Ô¶¨ÒåÊÂ¼şÖĞ£¬Ê²Ã´Ò²²»×ö¡£
+         * @param {string}   type     äº‹ä»¶ç±»å‹
+         * @param {Function|string} handler  è¦ç§»é™¤çš„äº‹ä»¶ç›‘å¬å‡½æ•°æˆ–è€…ç›‘å¬å‡½æ•°çš„key
+         * @remark 	å¦‚æœç¬¬äºŒä¸ªå‚æ•°handleræ²¡æœ‰è¢«ç»‘å®šåˆ°å¯¹åº”çš„è‡ªå®šä¹‰äº‹ä»¶ä¸­ï¼Œä»€ä¹ˆä¹Ÿä¸åšã€‚
          */
         baidu.lang.Class.prototype.removeEventListener = function (type, handler) {
             if (baidu.lang.isFunction(handler)) {
@@ -314,12 +314,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ÅÉ·¢×Ô¶¨ÒåÊÂ¼ş£¬Ê¹µÃ°ó¶¨µ½×Ô¶¨ÒåÊÂ¼şÉÏÃæµÄº¯Êı¶¼»á±»Ö´ĞĞ¡£ÒıÈëbaidu.lang.Eventºó£¬ClassµÄ×ÓÀàÊµÀı²Å»á»ñµÃ¸Ã·½·¨¡£
+         * æ´¾å‘è‡ªå®šä¹‰äº‹ä»¶ï¼Œä½¿å¾—ç»‘å®šåˆ°è‡ªå®šä¹‰äº‹ä»¶ä¸Šé¢çš„å‡½æ•°éƒ½ä¼šè¢«æ‰§è¡Œã€‚å¼•å…¥baidu.lang.Eventåï¼ŒClassçš„å­ç±»å®ä¾‹æ‰ä¼šè·å¾—è¯¥æ–¹æ³•ã€‚
          * @grammar obj.dispatchEvent(event, options)
-         * @param {baidu.lang.Event|String} event 	Event¶ÔÏó£¬»òÊÂ¼şÃû³Æ(1.1.1ÆğÖ§³Ö)
-         * @param {Object} options À©Õ¹²ÎÊı,Ëùº¬ÊôĞÔ¼üÖµ»áÀ©Õ¹µ½Event¶ÔÏóÉÏ(1.2ÆğÖ§³Ö)
-         * @remark ´¦Àí»áµ÷ÓÃÍ¨¹ıaddEventListenr°ó¶¨µÄ×Ô¶¨ÒåÊÂ¼ş»Øµ÷º¯ÊıÖ®Íâ£¬»¹»áµ÷ÓÃÖ±½Ó°ó¶¨µ½¶ÔÏóÉÏÃæµÄ×Ô¶¨ÒåÊÂ¼ş¡£
-         * ÀıÈç£º<br>
+         * @param {baidu.lang.Event|String} event 	Eventå¯¹è±¡ï¼Œæˆ–äº‹ä»¶åç§°(1.1.1èµ·æ”¯æŒ)
+         * @param {Object} options æ‰©å±•å‚æ•°,æ‰€å«å±æ€§é”®å€¼ä¼šæ‰©å±•åˆ°Eventå¯¹è±¡ä¸Š(1.2èµ·æ”¯æŒ)
+         * @remark å¤„ç†ä¼šè°ƒç”¨é€šè¿‡addEventListenrç»‘å®šçš„è‡ªå®šä¹‰äº‹ä»¶å›è°ƒå‡½æ•°ä¹‹å¤–ï¼Œè¿˜ä¼šè°ƒç”¨ç›´æ¥ç»‘å®šåˆ°å¯¹è±¡ä¸Šé¢çš„è‡ªå®šä¹‰äº‹ä»¶ã€‚
+         * ä¾‹å¦‚ï¼š<br>
          * myobj.onMyEvent = function(){}<br>
          * myobj.addEventListener("onMyEvent", function(){});
          */
@@ -346,17 +346,17 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ÎªÀàĞÍ¹¹ÔìÆ÷½¨Á¢¼Ì³Ğ¹ØÏµ
+         * ä¸ºç±»å‹æ„é€ å™¨å»ºç«‹ç»§æ‰¿å…³ç³»
          * @name baidu.lang.inherits
          * @function
          * @grammar baidu.lang.inherits(subClass, superClass[, className])
-         * @param {Function} subClass ×ÓÀà¹¹ÔìÆ÷
-         * @param {Function} superClass ¸¸Àà¹¹ÔìÆ÷
-         * @param {string} className ÀàÃû±êÊ¶
-         * @remark Ê¹subClass¼Ì³ĞsuperClassµÄprototype£¬
-         * Òò´ËsubClassµÄÊµÀıÄÜ¹»Ê¹ÓÃsuperClassµÄprototypeÖĞ¶¨ÒåµÄËùÓĞÊôĞÔºÍ·½·¨¡£<br>
-         * Õâ¸öº¯ÊıÊµ¼ÊÉÏÊÇ½¨Á¢ÁËsubClassºÍsuperClassµÄÔ­ĞÍÁ´¼¯³É£¬²¢¶ÔsubClass½øĞĞÁËconstructorĞŞÕı¡£<br>
-         * <strong>×¢Òâ£ºÈç¹ûÒª¼Ì³Ğ¹¹Ôìº¯Êı£¬ĞèÒªÔÚsubClassÀïÃæcallÒ»ÏÂ£¬¾ßÌå¼ûÏÂÃæµÄdemoÀı×Ó</strong>
+         * @param {Function} subClass å­ç±»æ„é€ å™¨
+         * @param {Function} superClass çˆ¶ç±»æ„é€ å™¨
+         * @param {string} className ç±»åæ ‡è¯†
+         * @remark ä½¿subClassç»§æ‰¿superClassçš„prototypeï¼Œ
+         * å› æ­¤subClassçš„å®ä¾‹èƒ½å¤Ÿä½¿ç”¨superClassçš„prototypeä¸­å®šä¹‰çš„æ‰€æœ‰å±æ€§å’Œæ–¹æ³•ã€‚<br>
+         * è¿™ä¸ªå‡½æ•°å®é™…ä¸Šæ˜¯å»ºç«‹äº†subClasså’ŒsuperClassçš„åŸå‹é“¾é›†æˆï¼Œå¹¶å¯¹subClassè¿›è¡Œäº†constructorä¿®æ­£ã€‚<br>
+         * <strong>æ³¨æ„ï¼šå¦‚æœè¦ç»§æ‰¿æ„é€ å‡½æ•°ï¼Œéœ€è¦åœ¨subClassé‡Œé¢callä¸€ä¸‹ï¼Œå…·ä½“è§ä¸‹é¢çš„demoä¾‹å­</strong>
          * @shortcut inherits
          * @meta standard
          * @see baidu.lang.Class
@@ -380,16 +380,16 @@ var BMapLib = window.BMapLib = BMapLib || {};
  
         /**
          * @ignore
-         * @namespace baidu.dom ²Ù×÷domµÄ·½·¨¡£
+         * @namespace baidu.dom æ“ä½œdomçš„æ–¹æ³•ã€‚
          */
         baidu.dom = baidu.dom || {};
  
         /**
-         * ´ÓÎÄµµÖĞ»ñÈ¡Ö¸¶¨µÄDOMÔªËØ
+         * ä»æ–‡æ¡£ä¸­è·å–æŒ‡å®šçš„DOMå…ƒç´ 
          * 
-         * @param {string|HTMLElement} id ÔªËØµÄid»òDOMÔªËØ
+         * @param {string|HTMLElement} id å…ƒç´ çš„idæˆ–DOMå…ƒç´ 
          * @meta standard
-         * @return {HTMLElement} DOMÔªËØ£¬Èç¹û²»´æÔÚ£¬·µ»Ønull£¬Èç¹û²ÎÊı²»ºÏ·¨£¬Ö±½Ó·µ»Ø²ÎÊı
+         * @return {HTMLElement} DOMå…ƒç´ ï¼Œå¦‚æœä¸å­˜åœ¨ï¼Œè¿”å›nullï¼Œå¦‚æœå‚æ•°ä¸åˆæ³•ï¼Œç›´æ¥è¿”å›å‚æ•°
          */
         baidu._g = baidu.dom._g = function (id) {
             if (baidu.lang.isString(id)) {
@@ -399,14 +399,14 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ´ÓÎÄµµÖĞ»ñÈ¡Ö¸¶¨µÄDOMÔªËØ
+         * ä»æ–‡æ¡£ä¸­è·å–æŒ‡å®šçš„DOMå…ƒç´ 
          * @name baidu.dom.g
          * @function
          * @grammar baidu.dom.g(id)
-         * @param {string|HTMLElement} id ÔªËØµÄid»òDOMÔªËØ
+         * @param {string|HTMLElement} id å…ƒç´ çš„idæˆ–DOMå…ƒç´ 
          * @meta standard
          *             
-         * @returns {HTMLElement|null} »ñÈ¡µÄÔªËØ£¬²éÕÒ²»µ½Ê±·µ»Ønull,Èç¹û²ÎÊı²»ºÏ·¨£¬Ö±½Ó·µ»Ø²ÎÊı
+         * @returns {HTMLElement|null} è·å–çš„å…ƒç´ ï¼ŒæŸ¥æ‰¾ä¸åˆ°æ—¶è¿”å›null,å¦‚æœå‚æ•°ä¸åˆæ³•ï¼Œç›´æ¥è¿”å›å‚æ•°
          */
         baidu.g = baidu.dom.g = function (id) {
             if ('string' == typeof id || id instanceof String) {
@@ -418,23 +418,23 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ÔÚÄ¿±êÔªËØµÄÖ¸¶¨Î»ÖÃ²åÈëHTML´úÂë
+         * åœ¨ç›®æ ‡å…ƒç´ çš„æŒ‡å®šä½ç½®æ’å…¥HTMLä»£ç 
          * @name baidu.dom.insertHTML
          * @function
          * @grammar baidu.dom.insertHTML(element, position, html)
-         * @param {HTMLElement|string} element Ä¿±êÔªËØ»òÄ¿±êÔªËØµÄid
-         * @param {string} position ²åÈëhtmlµÄÎ»ÖÃĞÅÏ¢£¬È¡ÖµÎªbeforeBegin,afterBegin,beforeEnd,afterEnd
-         * @param {string} html Òª²åÈëµÄhtml
+         * @param {HTMLElement|string} element ç›®æ ‡å…ƒç´ æˆ–ç›®æ ‡å…ƒç´ çš„id
+         * @param {string} position æ’å…¥htmlçš„ä½ç½®ä¿¡æ¯ï¼Œå–å€¼ä¸ºbeforeBegin,afterBegin,beforeEnd,afterEnd
+         * @param {string} html è¦æ’å…¥çš„html
          * @remark
          * 
-         * ¶ÔÓÚposition²ÎÊı£¬´óĞ¡Ğ´²»Ãô¸Ğ<br>
-         * ²ÎÊıµÄÒâË¼£ºbeforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
-         * ´ËÍâ£¬Èç¹ûÊ¹ÓÃ±¾º¯Êı²åÈë´øÓĞscript±êÇ©µÄHTML×Ö·û´®£¬script±êÇ©¶ÔÓ¦µÄ½Å±¾½«²»»á±»Ö´ĞĞ¡£
+         * å¯¹äºpositionå‚æ•°ï¼Œå¤§å°å†™ä¸æ•æ„Ÿ<br>
+         * å‚æ•°çš„æ„æ€ï¼šbeforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
+         * æ­¤å¤–ï¼Œå¦‚æœä½¿ç”¨æœ¬å‡½æ•°æ’å…¥å¸¦æœ‰scriptæ ‡ç­¾çš„HTMLå­—ç¬¦ä¸²ï¼Œscriptæ ‡ç­¾å¯¹åº”çš„è„šæœ¬å°†ä¸ä¼šè¢«æ‰§è¡Œã€‚
          * 
          * @shortcut insertHTML
          * @meta standard
          *             
-         * @returns {HTMLElement} Ä¿±êÔªËØ
+         * @returns {HTMLElement} ç›®æ ‡å…ƒç´ 
          */
         baidu.insertHTML = baidu.dom.insertHTML = function (element, position, html) {
             element = baidu.dom.g(element);
@@ -443,11 +443,11 @@ var BMapLib = window.BMapLib = BMapLib || {};
             if (element.insertAdjacentHTML) {
                 element.insertAdjacentHTML(position, html);
             } else {
-                // ÕâÀï²»×ö"undefined" != typeof(HTMLElement) && !window.operaÅĞ¶Ï£¬ÆäËüä¯ÀÀÆ÷½«³ö´í£¿£¡
-                // µ«ÊÇÆäÊµ×öÁËÅĞ¶Ï£¬ÆäËüä¯ÀÀÆ÷ÏÂµÈÓÚÕâ¸öº¯Êı¾Í²»ÄÜÖ´ĞĞÁË
+                // è¿™é‡Œä¸åš"undefined" != typeof(HTMLElement) && !window.operaåˆ¤æ–­ï¼Œå…¶å®ƒæµè§ˆå™¨å°†å‡ºé”™ï¼Ÿï¼
+                // ä½†æ˜¯å…¶å®åšäº†åˆ¤æ–­ï¼Œå…¶å®ƒæµè§ˆå™¨ä¸‹ç­‰äºè¿™ä¸ªå‡½æ•°å°±ä¸èƒ½æ‰§è¡Œäº†
                 range = element.ownerDocument.createRange();
-                // FFÏÂrangeµÄÎ»ÖÃÉèÖÃ´íÎó¿ÉÄÜµ¼ÖÂ´´½¨³öÀ´µÄfragmentÔÚ²åÈëdomÊ÷Ö®ºóhtml½á¹¹ÂÒµô
-                // ¸ÄÓÃrange.insertNodeÀ´²åÈëhtml, by wenyuxiang @ 2010-12-14.
+                // FFä¸‹rangeçš„ä½ç½®è®¾ç½®é”™è¯¯å¯èƒ½å¯¼è‡´åˆ›å»ºå‡ºæ¥çš„fragmentåœ¨æ’å…¥domæ ‘ä¹‹åhtmlç»“æ„ä¹±æ‰
+                // æ”¹ç”¨range.insertNodeæ¥æ’å…¥html, by wenyuxiang @ 2010-12-14.
                 position = position.toUpperCase();
                 if (position == 'AFTERBEGIN' || position == 'BEFOREEND') {
                     range.selectNodeContents(element);
@@ -463,18 +463,18 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ÎªÄ¿±êÔªËØÌí¼ÓclassName
+         * ä¸ºç›®æ ‡å…ƒç´ æ·»åŠ className
          * @name baidu.dom.addClass
          * @function
          * @grammar baidu.dom.addClass(element, className)
-         * @param {HTMLElement|string} element Ä¿±êÔªËØ»òÄ¿±êÔªËØµÄid
-         * @param {string} className ÒªÌí¼ÓµÄclassName£¬ÔÊĞíÍ¬Ê±Ìí¼Ó¶à¸öclass£¬ÖĞ¼äÊ¹ÓÃ¿Õ°×·û·Ö¸ô
+         * @param {HTMLElement|string} element ç›®æ ‡å…ƒç´ æˆ–ç›®æ ‡å…ƒç´ çš„id
+         * @param {string} className è¦æ·»åŠ çš„classNameï¼Œå…è®¸åŒæ—¶æ·»åŠ å¤šä¸ªclassï¼Œä¸­é—´ä½¿ç”¨ç©ºç™½ç¬¦åˆ†éš”
          * @remark
-         * Ê¹ÓÃÕßÓ¦±£Ö¤Ìá¹©µÄclassNameºÏ·¨ĞÔ£¬²»Ó¦°üº¬²»ºÏ·¨×Ö·û£¬classNameºÏ·¨×Ö·û²Î¿¼£ºhttp://www.w3.org/TR/CSS2/syndata.html¡£
+         * ä½¿ç”¨è€…åº”ä¿è¯æä¾›çš„classNameåˆæ³•æ€§ï¼Œä¸åº”åŒ…å«ä¸åˆæ³•å­—ç¬¦ï¼ŒclassNameåˆæ³•å­—ç¬¦å‚è€ƒï¼šhttp://www.w3.org/TR/CSS2/syndata.htmlã€‚
          * @shortcut addClass
          * @meta standard
          * 	            
-         * @returns {HTMLElement} Ä¿±êÔªËØ
+         * @returns {HTMLElement} ç›®æ ‡å…ƒç´ 
          */
         baidu.ac = baidu.dom.addClass = function (element, className) {
             element = baidu.dom.g(element);
@@ -496,44 +496,44 @@ var BMapLib = window.BMapLib = BMapLib || {};
  
         /**
          * @ignore
-         * @namespace baidu.event ÆÁ±Îä¯ÀÀÆ÷²îÒìĞÔµÄÊÂ¼ş·â×°¡£
-         * @property target 	ÊÂ¼şµÄ´¥·¢ÔªËØ
-         * @property pageX 		Êó±êÊÂ¼şµÄÊó±êx×ø±ê
-         * @property pageY 		Êó±êÊÂ¼şµÄÊó±êy×ø±ê
-         * @property keyCode 	¼üÅÌÊÂ¼şµÄ¼üÖµ
+         * @namespace baidu.event å±è”½æµè§ˆå™¨å·®å¼‚æ€§çš„äº‹ä»¶å°è£…ã€‚
+         * @property target 	äº‹ä»¶çš„è§¦å‘å…ƒç´ 
+         * @property pageX 		é¼ æ ‡äº‹ä»¶çš„é¼ æ ‡xåæ ‡
+         * @property pageY 		é¼ æ ‡äº‹ä»¶çš„é¼ æ ‡yåæ ‡
+         * @property keyCode 	é”®ç›˜äº‹ä»¶çš„é”®å€¼
          */
         baidu.event = baidu.event || {};
  
         /**
-         * ÊÂ¼ş¼àÌıÆ÷µÄ´æ´¢±í
+         * äº‹ä»¶ç›‘å¬å™¨çš„å­˜å‚¨è¡¨
          * @private
          * @meta standard
          */
         baidu.event._listeners = baidu.event._listeners || [];
  
         /**
-         * ÎªÄ¿±êÔªËØÌí¼ÓÊÂ¼ş¼àÌıÆ÷
+         * ä¸ºç›®æ ‡å…ƒç´ æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
          * @name baidu.event.on
          * @function
          * @grammar baidu.event.on(element, type, listener)
-         * @param {HTMLElement|string|window} element Ä¿±êÔªËØ»òÄ¿±êÔªËØid
-         * @param {string} type ÊÂ¼şÀàĞÍ
-         * @param {Function} listener ĞèÒªÌí¼ÓµÄ¼àÌıÆ÷
+         * @param {HTMLElement|string|window} element ç›®æ ‡å…ƒç´ æˆ–ç›®æ ‡å…ƒç´ id
+         * @param {string} type äº‹ä»¶ç±»å‹
+         * @param {Function} listener éœ€è¦æ·»åŠ çš„ç›‘å¬å™¨
          * @remark
-         *  1. ²»Ö§³Ö¿çä¯ÀÀÆ÷µÄÊó±ê¹öÂÖÊÂ¼ş¼àÌıÆ÷Ìí¼Ó<br>
-         *  2. ¸Ä·½·¨²»Îª¼àÌıÆ÷¹àÈëÊÂ¼ş¶ÔÏó£¬ÒÔ·ÀÖ¹¿çiframeÊÂ¼ş¹ÒÔØµÄÊÂ¼ş¶ÔÏó»ñÈ¡Ê§°Ü            
+         *  1. ä¸æ”¯æŒè·¨æµè§ˆå™¨çš„é¼ æ ‡æ»šè½®äº‹ä»¶ç›‘å¬å™¨æ·»åŠ <br>
+         *  2. æ”¹æ–¹æ³•ä¸ä¸ºç›‘å¬å™¨çŒå…¥äº‹ä»¶å¯¹è±¡ï¼Œä»¥é˜²æ­¢è·¨iframeäº‹ä»¶æŒ‚è½½çš„äº‹ä»¶å¯¹è±¡è·å–å¤±è´¥            
          * @shortcut on
          * @meta standard
          * @see baidu.event.un
          *             
-         * @returns {HTMLElement|window} Ä¿±êÔªËØ
+         * @returns {HTMLElement|window} ç›®æ ‡å…ƒç´ 
          */
         baidu.on = baidu.event.on = function (element, type, listener) {
             type = type.replace(/^on/i, '');
             element = baidu._g(element);
             var realListener = function (ev) {
-                // 1. ÕâÀï²»Ö§³ÖEventArgument,  Ô­ÒòÊÇ¿çframeµÄÊÂ¼ş¹ÒÔØ
-                // 2. elementÊÇÎªÁËĞŞÕıthis
+                // 1. è¿™é‡Œä¸æ”¯æŒEventArgument,  åŸå› æ˜¯è·¨frameçš„äº‹ä»¶æŒ‚è½½
+                // 2. elementæ˜¯ä¸ºäº†ä¿®æ­£this
                 listener.call(element, ev);
             },
             lis = baidu.event._listeners,
@@ -541,36 +541,36 @@ var BMapLib = window.BMapLib = BMapLib || {};
             afterFilter,
             realType = type;
             type = type.toLowerCase();
-            // filter¹ıÂË
+            // filterè¿‡æ»¤
             if(filter && filter[type]){
                 afterFilter = filter[type](element, type, realListener);
                 realType = afterFilter.type;
                 realListener = afterFilter.listener;
             }
-            // ÊÂ¼ş¼àÌıÆ÷¹ÒÔØ
+            // äº‹ä»¶ç›‘å¬å™¨æŒ‚è½½
             if (element.addEventListener) {
                 element.addEventListener(realType, realListener, false);
             } else if (element.attachEvent) {
                 element.attachEvent('on' + realType, realListener);
             }
           
-            // ½«¼àÌıÆ÷´æ´¢µ½Êı×éÖĞ
+            // å°†ç›‘å¬å™¨å­˜å‚¨åˆ°æ•°ç»„ä¸­
             lis[lis.length] = [element, type, listener, realListener, realType];
             return element;
         };
  
         /**
-         * ÎªÄ¿±êÔªËØÒÆ³ıÊÂ¼ş¼àÌıÆ÷
+         * ä¸ºç›®æ ‡å…ƒç´ ç§»é™¤äº‹ä»¶ç›‘å¬å™¨
          * @name baidu.event.un
          * @function
          * @grammar baidu.event.un(element, type, listener)
-         * @param {HTMLElement|string|window} element Ä¿±êÔªËØ»òÄ¿±êÔªËØid
-         * @param {string} type ÊÂ¼şÀàĞÍ
-         * @param {Function} listener ĞèÒªÒÆ³ıµÄ¼àÌıÆ÷
+         * @param {HTMLElement|string|window} element ç›®æ ‡å…ƒç´ æˆ–ç›®æ ‡å…ƒç´ id
+         * @param {string} type äº‹ä»¶ç±»å‹
+         * @param {Function} listener éœ€è¦ç§»é™¤çš„ç›‘å¬å™¨
          * @shortcut un
          * @meta standard
          *             
-         * @returns {HTMLElement|window} Ä¿±êÔªËØ
+         * @returns {HTMLElement|window} ç›®æ ‡å…ƒç´ 
          */
         baidu.un = baidu.event.un = function (element, type, listener) {
             element = baidu._g(element);
@@ -582,16 +582,16 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 item,
                 realType, realListener;
             
-            //Èç¹û½«listenerµÄ½á¹¹¸Ä³Éjson
-            //¿ÉÒÔ½ÚÊ¡µôÕâ¸öÑ­»·£¬ÓÅ»¯ĞÔÄÜ
-            //µ«ÊÇÓÉÓÚunµÄÊ¹ÓÃÆµÂÊ²¢²»¸ß£¬Í¬Ê±ÔÚlistener²»¶àµÄÊ±ºò
-            //±éÀúÊı×éµÄĞÔÄÜÏûºÄ²»»á¶Ô´úÂë²úÉúÓ°Ïì
-            //Ôİ²»¿¼ÂÇ´ËÓÅ»¯
+            //å¦‚æœå°†listenerçš„ç»“æ„æ”¹æˆjson
+            //å¯ä»¥èŠ‚çœæ‰è¿™ä¸ªå¾ªç¯ï¼Œä¼˜åŒ–æ€§èƒ½
+            //ä½†æ˜¯ç”±äºunçš„ä½¿ç”¨é¢‘ç‡å¹¶ä¸é«˜ï¼ŒåŒæ—¶åœ¨listenerä¸å¤šçš„æ—¶å€™
+            //éå†æ•°ç»„çš„æ€§èƒ½æ¶ˆè€—ä¸ä¼šå¯¹ä»£ç äº§ç”Ÿå½±å“
+            //æš‚ä¸è€ƒè™‘æ­¤ä¼˜åŒ–
             while (len--) {
                 item = lis[len];
                 
-                // listener´æÔÚÊ±£¬ÒÆ³ıelementµÄËùÓĞÒÔlistener¼àÌıµÄtypeÀàĞÍÊÂ¼ş
-                // listener²»´æÔÚÊ±£¬ÒÆ³ıelementµÄËùÓĞtypeÀàĞÍÊÂ¼ş
+                // listenerå­˜åœ¨æ—¶ï¼Œç§»é™¤elementçš„æ‰€æœ‰ä»¥listenerç›‘å¬çš„typeç±»å‹äº‹ä»¶
+                // listenerä¸å­˜åœ¨æ—¶ï¼Œç§»é™¤elementçš„æ‰€æœ‰typeç±»å‹äº‹ä»¶
                 if (item[1] === type
                     && item[0] === element
                     && (isRemoveAll || item[2] === listener)) {
@@ -609,11 +609,11 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ×èÖ¹ÊÂ¼şµÄÄ¬ÈÏĞĞÎª
+         * é˜»æ­¢äº‹ä»¶çš„é»˜è®¤è¡Œä¸º
          * @name baidu.event.preventDefault
          * @function
          * @grammar baidu.event.preventDefault(event)
-         * @param {Event} event ÊÂ¼ş¶ÔÏó
+         * @param {Event} event äº‹ä»¶å¯¹è±¡
          * @meta standard
          */
         baidu.preventDefault = baidu.event.preventDefault = function (event) {
@@ -630,25 +630,25 @@ var BMapLib = window.BMapLib = BMapLib || {};
      */
     var DistanceTool =
         /**
-         * DistanceToolÀàµÄ¹¹Ôìº¯Êı
-         * @class ¾àÀë²âËãÀà£¬ÊµÏÖ²â¾àĞ§¹ûµÄ<b>Èë¿Ú</b>¡£
-         * ÊµÀı»¯¸ÃÀàºó£¬¼´¿Éµ÷ÓÃ¸ÃÀàÌá¹©µÄopen
-         * ·½·¨¿ªÆô²â¾à×´Ì¬¡£
+         * DistanceToolç±»çš„æ„é€ å‡½æ•°
+         * @class è·ç¦»æµ‹ç®—ç±»ï¼Œå®ç°æµ‹è·æ•ˆæœçš„<b>å…¥å£</b>ã€‚
+         * å®ä¾‹åŒ–è¯¥ç±»åï¼Œå³å¯è°ƒç”¨è¯¥ç±»æä¾›çš„open
+         * æ–¹æ³•å¼€å¯æµ‹è·çŠ¶æ€ã€‚
          * 
          * @constructor
-         * @param {Map} map Baidu mapµÄÊµÀı¶ÔÏó
-         * @param {Json Object} opts ¿ÉÑ¡µÄÊäÈë²ÎÊı£¬·Ç±ØÌîÏî¡£¿ÉÊäÈëÑ¡Ïî°üÀ¨£º<br />
-         * {"<b>followText</b>" : {String} ²â¾à¹ı³ÌÖĞ£¬ÌáÊ¾¿òÎÄ×Ö,
-         * <br />"<b>unit</b>" : {String} ²â¾à½á¹ûËùÓÃµÄµ¥Î»ÖÆ£¬¿É½ÓÊÜµÄÊôĞÔÎª"metric"±íÊ¾Ã×ÖÆºÍ"us"±íÊ¾ÃÀ¹ú´«Í³µ¥Î»,
-         * <br />"<b>lineColor</b>" : {String} ÕÛÏßÑÕÉ«,
-         * <br />"<b>lineStroke</b>" : {Number} ÕÛÏß¿í¶È,
-         * <br />"<b>opacity</b>" : {Number} Í¸Ã÷¶È,
-         * <br />"<b>lineStyle</b>" : {String} ÕÛÏßµÄÑùÊ½£¬Ö»¿ÉÉèÖÃsolidºÍdashed,
-         * <br />"<b>secIcon</b>" : {BMap.Icon} ×ªÕÛµãµÄIcon,
-         * <br />"<b>closeIcon</b>" : {BMap.Icon} ¹Ø±Õ°´Å¥µÄIcon,
-         * <br />"<b>cursor</b>" : {String} ¸úËæµÄÊó±êÑùÊ½}
+         * @param {Map} map Baidu mapçš„å®ä¾‹å¯¹è±¡
+         * @param {Json Object} opts å¯é€‰çš„è¾“å…¥å‚æ•°ï¼Œéå¿…å¡«é¡¹ã€‚å¯è¾“å…¥é€‰é¡¹åŒ…æ‹¬ï¼š<br />
+         * {"<b>followText</b>" : {String} æµ‹è·è¿‡ç¨‹ä¸­ï¼Œæç¤ºæ¡†æ–‡å­—,
+         * <br />"<b>unit</b>" : {String} æµ‹è·ç»“æœæ‰€ç”¨çš„å•ä½åˆ¶ï¼Œå¯æ¥å—çš„å±æ€§ä¸º"metric"è¡¨ç¤ºç±³åˆ¶å’Œ"us"è¡¨ç¤ºç¾å›½ä¼ ç»Ÿå•ä½,
+         * <br />"<b>lineColor</b>" : {String} æŠ˜çº¿é¢œè‰²,
+         * <br />"<b>lineStroke</b>" : {Number} æŠ˜çº¿å®½åº¦,
+         * <br />"<b>opacity</b>" : {Number} é€æ˜åº¦,
+         * <br />"<b>lineStyle</b>" : {String} æŠ˜çº¿çš„æ ·å¼ï¼Œåªå¯è®¾ç½®solidå’Œdashed,
+         * <br />"<b>secIcon</b>" : {BMap.Icon} è½¬æŠ˜ç‚¹çš„Icon,
+         * <br />"<b>closeIcon</b>" : {BMap.Icon} å…³é—­æŒ‰é’®çš„Icon,
+         * <br />"<b>cursor</b>" : {String} è·Ÿéšçš„é¼ æ ‡æ ·å¼}
          *
-         * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+         * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
          * var map = new BMap.Map("container");<br />map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);<br />var myDistanceToolObject = new BMapLib.DistanceTool(map, {lineStroke : 2});
          */
         BMapLib.DistanceTool = function(map, opts){
@@ -656,14 +656,14 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 return;
             }
 			
-			//ÒÔÏÂ²¿·ÖÊÇÌí¼ÓµÄ´úÂë
+			//ä»¥ä¸‹éƒ¨åˆ†æ˜¯æ·»åŠ çš„ä»£ç 
             if( OperationMask._maskElement ){
               OperationMask._maskElement = null;
             }
-			//ÒÔÉÏ²¿·ÖÊÇÌí¼ÓµÄ´úÂë
+			//ä»¥ä¸Šéƒ¨åˆ†æ˜¯æ·»åŠ çš„ä»£ç 
 			
             /**
-             * map¶ÔÏó
+             * mapå¯¹è±¡
              * @private
              * @type {Map}
              */
@@ -671,8 +671,8 @@ var BMapLib = window.BMapLib = BMapLib || {};
 			
             opts = opts || {};
             /**
-             * _optsÊÇÄ¬ÈÏ²ÎÊı¸³Öµ¡£
-             * ÏÂÃæÍ¨¹ıÓÃ»§ÊäÈëµÄopts£¬¶ÔÄ¬ÈÏ²ÎÊı¸³Öµ
+             * _optsæ˜¯é»˜è®¤å‚æ•°èµ‹å€¼ã€‚
+             * ä¸‹é¢é€šè¿‡ç”¨æˆ·è¾“å…¥çš„optsï¼Œå¯¹é»˜è®¤å‚æ•°èµ‹å€¼
              * @private
              * @type {Json}
              */
@@ -680,70 +680,70 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 baidu.extend(this._opts || {}, {
  
                     /**
-                     * ²â¾àÌáÊ¾
+                     * æµ‹è·æç¤º
                      * @private
                      * @type {String}
                      */
-                    tips : "²â¾à",
+                    tips : "æµ‹è·",
  
                     /**
-                     * ²â¾à¹ı³ÌÖĞ£¬ÌáÊ¾¿òÎÄ×Ö
+                     * æµ‹è·è¿‡ç¨‹ä¸­ï¼Œæç¤ºæ¡†æ–‡å­—
                      * @private
                      * @type {String}
                      */
-                    followText : "µ¥»÷È·¶¨µØµã£¬Ë«»÷½áÊø",
+                    followText : "å•å‡»ç¡®å®šåœ°ç‚¹ï¼ŒåŒå‡»ç»“æŸ",
  
                     /**
-                     * ²â¾à½á¹ûËùÓÃµÄµ¥Î»ÖÆ£¬¿É½ÓÊÜµÄÊôĞÔÎª"metric"±íÊ¾Ã×ÖÆºÍ"us"±íÊ¾ÃÀ¹ú´«Í³µ¥Î»
+                     * æµ‹è·ç»“æœæ‰€ç”¨çš„å•ä½åˆ¶ï¼Œå¯æ¥å—çš„å±æ€§ä¸º"metric"è¡¨ç¤ºç±³åˆ¶å’Œ"us"è¡¨ç¤ºç¾å›½ä¼ ç»Ÿå•ä½
                      * @private
                      * @type {String}
                      */
                     unit : "metric",
  
                     /**
-                     * ÕÛÏßÑÕÉ«
+                     * æŠ˜çº¿é¢œè‰²
                      * @private
                      * @type {String}
                      */
                     lineColor : "#ff6319",
  
                     /**
-                     * ÕÛÏßÏß¿í
+                     * æŠ˜çº¿çº¿å®½
                      * @private
                      * @type {Number}
                      */
                     lineStroke : 2,
  
                     /**
-                     * ÕÛÏßÍ¸Ã÷¶È
+                     * æŠ˜çº¿é€æ˜åº¦
                      * @private
                      * @type {Number}
                      */
                     opacity : 0.8,
  
                     /**
-                     * ÕÛÏßÑùÊ½
+                     * æŠ˜çº¿æ ·å¼
                      * @private
                      * @type {String}
                      */
                     lineStyle     : "solid",
  
                     /**
-                     * ¸úËæÊó±êÑùÊ½
+                     * è·Ÿéšé¼ æ ‡æ ·å¼
                      * @private
                      * @type {String}
                      */
                     cursor : "http://api.map.baidu.com/images/ruler.cur",
  
                     /**
-                     * ×ªÕÛµãµÄICONÑùÊ½
+                     * è½¬æŠ˜ç‚¹çš„ICONæ ·å¼
                      * @private
                      * @type {BMap.Icon}
                      */
                      secIcon : null,
                       
                     /**
-                     * ×ªÕÛµãµÄICONÑùÊ½
+                     * è½¬æŠ˜ç‚¹çš„ICONæ ·å¼
                      * @private
                      * @type {BMap.Icon}
                      */
@@ -752,125 +752,125 @@ var BMapLib = window.BMapLib = BMapLib || {};
             , opts);
  
             /**
-             * ¸úËæµÄtitle¸²¸ÇÎï
+             * è·Ÿéšçš„titleè¦†ç›–ç‰©
              * @private
              * @type {BMap.Label}
              */
             this._followTitle = null;
  
             /**
-             * ÕÛÏß°üº¬ËùÓĞµãµÄÊı×é
+             * æŠ˜çº¿åŒ…å«æ‰€æœ‰ç‚¹çš„æ•°ç»„
              * @private
              * @type {Array}
              */
             this._points = [];
  
             /**
-             * ÕÛÏßËù°üº¬µÄËùÓĞpathÊı×é
+             * æŠ˜çº¿æ‰€åŒ…å«çš„æ‰€æœ‰pathæ•°ç»„
              * @private
              * @type {Array}
              */
             this._paths = [];
  
             /**
-             * ÕÛÏß½áµãÍ¼Æ¬Êı×é
+             * æŠ˜çº¿ç»“ç‚¹å›¾ç‰‡æ•°ç»„
              * @private
              * @type {Array}
              */
             this._dots = [];
  
             /**
-             * ÕÛÏß²â¾à°üº¬ËùÓĞÏß¶ÎµÄ¾àÀë
+             * æŠ˜çº¿æµ‹è·åŒ…å«æ‰€æœ‰çº¿æ®µçš„è·ç¦»
              * @private
              * @type {Array}
              */
             this._segDistance = [];
  
             /**
-             * ¸²¸ÇÎïµÄÊı×é
+             * è¦†ç›–ç‰©çš„æ•°ç»„
              * @private
              * @type {Array}
              */
             this._overlays = [];
  
             /**
-             * ÊÇ·ñÔÚµ÷ÓÃmap.clearOverlaysÇå³ı»­ÏßĞèÒª½¨Á¢µÄÏà¹ØoverlayÔªËØ
+             * æ˜¯å¦åœ¨è°ƒç”¨map.clearOverlaysæ¸…é™¤ç”»çº¿éœ€è¦å»ºç«‹çš„ç›¸å…³overlayå…ƒç´ 
              * @private
              * @type {Boolean}
              */
             this._enableMassClear = true,
            
             /**
-             * µ¥Î»ÖÆ£¬´æ´¢ÓïÑÔ°üÖĞ¶¨ÒåµÄµ¥Î»Ãû³Æ
+             * å•ä½åˆ¶ï¼Œå­˜å‚¨è¯­è¨€åŒ…ä¸­å®šä¹‰çš„å•ä½åç§°
              * @private
              * @type {Json}
              */
             this._units = {
-                // metric ±íÊ¾Ã×ÖÆ
+                // metric è¡¨ç¤ºç±³åˆ¶
                 metric : {
                     /**
-                     * Ã×ÖÆµÄÃû³Æ
+                     * ç±³åˆ¶çš„åç§°
                      * @type {String}
                      */
                     name : "metric",
  
                     /**
-                     * ºÍÃ×ÖÆµÄ»»Ëã¹ØÏµ
+                     * å’Œç±³åˆ¶çš„æ¢ç®—å…³ç³»
                      * @type {Number}
                      */
                     conv : 1,
  
                     /**
-                     * Ã×ÖÆµ¥Î»ÏÂÁ½¸öµ¥Î»ÖÆÖ®¼äµÄ»»Ëã¹ØÏµ
+                     * ç±³åˆ¶å•ä½ä¸‹ä¸¤ä¸ªå•ä½åˆ¶ä¹‹é—´çš„æ¢ç®—å…³ç³»
                      * @type {Number}
                      */
                     incon : 1000,
  
                     /**
-                     * Ã×ÖÆµ¥Î»ÏÂ½ÏĞ¡µ¥Î»
+                     * ç±³åˆ¶å•ä½ä¸‹è¾ƒå°å•ä½
                      * @type {String}
                      */
-                    u1 : "Ã×",
+                    u1 : "ç±³",
  
                     /**
-                     * Ã×ÖÆµ¥Î»ÏÂ½Ï´óµ¥Î»
+                     * ç±³åˆ¶å•ä½ä¸‹è¾ƒå¤§å•ä½
                      * @type {String}
                      */
-                    u2 : "¹«Àï"
+                    u2 : "å…¬é‡Œ"
                 },
-                // us ±íÊ¾ÃÀ¹ú´«Í³µ¥Î»£¬¸÷²ÎÊıÒâÒåÍ¬ÉÏmetric
+                // us è¡¨ç¤ºç¾å›½ä¼ ç»Ÿå•ä½ï¼Œå„å‚æ•°æ„ä¹‰åŒä¸Šmetric
                 us : {
                     name : "us",
                     conv : 3.2808,
                     incon : 5279.856,
-                    u1 : "Ó¢³ß",
-                    u2 : "Ó¢Àï"
+                    u1 : "è‹±å°º",
+                    u2 : "è‹±é‡Œ"
                 }
             };
  
             /**
-             * ÊÇ·ñÒÑ¾­¿ªÆôÁË²â¾à×´Ì¬
+             * æ˜¯å¦å·²ç»å¼€å¯äº†æµ‹è·çŠ¶æ€
              * @private
              * @type {Boolean}
              */
             this._isOpen = false;
  
             /**
-             * Î´µã»÷ÈÎºÎÒ»µãÊ±£¬Êó±êÒÆ¶¯Ê±µÄ¸úËæÌáÊ¾ÎÄ×Ö
+             * æœªç‚¹å‡»ä»»ä½•ä¸€ç‚¹æ—¶ï¼Œé¼ æ ‡ç§»åŠ¨æ—¶çš„è·Ÿéšæç¤ºæ–‡å­—
              * @private
              * @type {String}
              */
-            this._startFollowText = "µ¥»÷È·¶¨Æğµã";
+            this._startFollowText = "å•å‡»ç¡®å®šèµ·ç‚¹";
  
             /**
-             * µØÍ¼ÒÆ¶¯µÄ¼ÆÊ±Æ÷
+             * åœ°å›¾ç§»åŠ¨çš„è®¡æ—¶å™¨
              * @private
              * @type {Object}
              */
             this._movingTimerId = null;
  
             /**
-             * ²â¾àĞèÒªÌí¼ÓµÄCSSÑùÊ½
+             * æµ‹è·éœ€è¦æ·»åŠ çš„CSSæ ·å¼
              * @private
              * @type {Json}
              */
@@ -896,21 +896,21 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 this._opts.unit = "metric";
             }
             
-            this.text = "²â¾à";
+            this.text = "æµ‹è·";
         }
     
-    // Í¨¹ıbaidu.langÏÂµÄinherits·½·¨£¬ÈÃDistanceTool¼Ì³Ğbaidu.lang.Class
+    // é€šè¿‡baidu.langä¸‹çš„inheritsæ–¹æ³•ï¼Œè®©DistanceToolç»§æ‰¿baidu.lang.Class
     baidu.lang.inherits(DistanceTool, baidu.lang.Class, "DistanceTool");
  
     /**
-     * µØÍ¼ÇøÓòµÄÒÆ¶¯ÊÂ¼ş°ó¶¨
-     * @return ÎŞ·µ»ØÖµ
+     * åœ°å›¾åŒºåŸŸçš„ç§»åŠ¨äº‹ä»¶ç»‘å®š
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._bind = function(){
-        // ÉèÖÃÊó±êÑùÊ½
+        // è®¾ç½®é¼ æ ‡æ ·å¼
         this._setCursor(this._opts.cursor);
         var me = this;
-        // ÔÚ×°ÔØµØÍ¼µÄÒ³ÃæÔªËØÉÏ£¬°ó¶¨Êó±êÒÆ¶¯ÊÂ¼ş
+        // åœ¨è£…è½½åœ°å›¾çš„é¡µé¢å…ƒç´ ä¸Šï¼Œç»‘å®šé¼ æ ‡ç§»åŠ¨äº‹ä»¶
         baidu.on(this._map.getContainer(), "mousemove", function(e){
             if (!me._isOpen) {
                 return;
@@ -920,7 +920,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
             }
             e = window.event || e;
             var t = e.target || e.srcElement;
-            // Èç¹û´¥·¢¸ÃÊÂ¼şµÄÒ³ÃæÔªËØ²»ÊÇÕÚ¸ÇĞ§¹û²ã£¬Ôò·µ»Ø£¬ÎŞ²Ù×÷
+            // å¦‚æœè§¦å‘è¯¥äº‹ä»¶çš„é¡µé¢å…ƒç´ ä¸æ˜¯é®ç›–æ•ˆæœå±‚ï¼Œåˆ™è¿”å›ï¼Œæ— æ“ä½œ
             if (t != OperationMask.getDom(me._map)) {
                 me._followTitle.hide();
                 return;
@@ -928,11 +928,11 @@ var BMapLib = window.BMapLib = BMapLib || {};
             if (!me._mapMoving) {
                 me._followTitle.show();
             }
-            // ÉèÖÃÊó±êÒÆ¶¯¹ı³ÌÖĞ£¬¸úËæµÄÎÄ×ÖÌáÊ¾¿òµÄÎ»ÖÃ
+            // è®¾ç½®é¼ æ ‡ç§»åŠ¨è¿‡ç¨‹ä¸­ï¼Œè·Ÿéšçš„æ–‡å­—æç¤ºæ¡†çš„ä½ç½®
             var pt = OperationMask.getDrawPoint(e, true);
             me._followTitle.setPosition(pt);
         });
-        // ´´½¨Êó±ê¸úËæµÄÎÄ×ÖÌáÊ¾¿ò
+        // åˆ›å»ºé¼ æ ‡è·Ÿéšçš„æ–‡å­—æç¤ºæ¡†
         if (this._startFollowText) {
             var t = this._followTitle = new BMap.Label(this._startFollowText, {offset : new BMap.Size(14, 16)});
             this._followTitle.setStyles({color : "#333", borderColor : "#ff0103"});
@@ -940,71 +940,71 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ¿ªÆôµØÍ¼µÄ²â¾à×´Ì¬
-     * @return {Boolean}£¬¿ªÆô²â¾à×´Ì¬³É¹¦£¬·µ»Øtrue£»·ñÔò·µ»Øfalse¡£
+     * å¼€å¯åœ°å›¾çš„æµ‹è·çŠ¶æ€
+     * @return {Boolean}ï¼Œå¼€å¯æµ‹è·çŠ¶æ€æˆåŠŸï¼Œè¿”å›trueï¼›å¦åˆ™è¿”å›falseã€‚
      *
-     * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+     * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
      * myDistanceToolObject.open();
      */
     DistanceTool.prototype.open = function(){
-        // ÅĞ¶Ï²â¾à×´Ì¬ÊÇ·ñÒÑ¾­¿ªÆô
+        // åˆ¤æ–­æµ‹è·çŠ¶æ€æ˜¯å¦å·²ç»å¼€å¯
         if (this._isOpen == true){
             return true;
         }
-        // ÒÑÓĞÆäËûµØÍ¼ÉÏµÄÊó±ê²Ù×÷¹¤¾ß¿ªÆô
+        // å·²æœ‰å…¶ä»–åœ°å›¾ä¸Šçš„é¼ æ ‡æ“ä½œå·¥å…·å¼€å¯
         if (!!BMapLib._toolInUse) {
             return;
         }
         this._isOpen = true;
         BMapLib._toolInUse = true;
  
-        // ÅĞ¶ÏÊÇ·ñÊÇ·ñÔÚÒÆ¶¯¹ı³ÌÖĞ
+        // åˆ¤æ–­æ˜¯å¦æ˜¯å¦åœ¨ç§»åŠ¨è¿‡ç¨‹ä¸­
         if (this._mapMoving){
             delete this._mapMoving;
         }
  
         var me = this;
-        // Ôö¼ÓÊó±êÔÚµØÍ¼ÇøÓòÒÆ¶¯µÄÊÂ¼ş
-        // Í¨¹ıbinded²ÎÊı£¬±ÜÃâ¶à´Î°ó¶¨
+        // å¢åŠ é¼ æ ‡åœ¨åœ°å›¾åŒºåŸŸç§»åŠ¨çš„äº‹ä»¶
+        // é€šè¿‡bindedå‚æ•°ï¼Œé¿å…å¤šæ¬¡ç»‘å®š
         if (!this._binded) {
             this._binded = true;
-            // °ó¶¨¿Ø¼şÏîÊÂ¼ş
+            // ç»‘å®šæ§ä»¶é¡¹äº‹ä»¶
             this._bind();
-            // µØÍ¼µÄÒÆ¶¯¹ı³ÌÖĞ£¬ĞèÒªÒş²ØÏà¹ØµÄÌáÊ¾¿ò
+            // åœ°å›¾çš„ç§»åŠ¨è¿‡ç¨‹ä¸­ï¼Œéœ€è¦éšè—ç›¸å…³çš„æç¤ºæ¡†
             this._map.addEventListener("moving", function(){
                 me._hideCurrent();
             });
         }
  
-        // ½«ÎÄ×ÖÌáÊ¾¿ò×÷ÎªBMap.LabelÔªËØ£¬Ìá½»¸øMap Api½øĞĞ¹ÜÀí
+        // å°†æ–‡å­—æç¤ºæ¡†ä½œä¸ºBMap.Labelå…ƒç´ ï¼Œæäº¤ç»™Map Apiè¿›è¡Œç®¡ç†
         if (this._followTitle) {
             this._map.addOverlay(this._followTitle);
             this._followTitle.hide();
         }
  
         /**
-         * ²â¾à¹ı³ÌÖĞ£¬µã»÷µØÍ¼Ê±£¬´¥·¢µÄ²Ù×÷
+         * æµ‹è·è¿‡ç¨‹ä¸­ï¼Œç‚¹å‡»åœ°å›¾æ—¶ï¼Œè§¦å‘çš„æ“ä½œ
          * @ignore
-         * @param {Object} e event¶ÔÏó
+         * @param {Object} e eventå¯¹è±¡
          */
         var distClick = function(e) {
             var map = me._map;
             if (!me._isOpen) {
                     return;
             }
-            // Í¨¹ıevent¶ÔÏó£¬¼ÆËãµÃ³öµã»÷Î»ÖÃµÄÎïÀí×ø±ê£¬poiÎªÒ»¸öBMap.Point¶ÔÏó
+            // é€šè¿‡eventå¯¹è±¡ï¼Œè®¡ç®—å¾—å‡ºç‚¹å‡»ä½ç½®çš„ç‰©ç†åæ ‡ï¼Œpoiä¸ºä¸€ä¸ªBMap.Pointå¯¹è±¡
             e = window.event || e;
             var poi = OperationMask.getDrawPoint(e, true);
-            // ÑéÖ¤¼ÆËãµÃ³öµÄ¸ÃµãµÄÎ»ÖÃºÏÀíĞÔ
+            // éªŒè¯è®¡ç®—å¾—å‡ºçš„è¯¥ç‚¹çš„ä½ç½®åˆç†æ€§
             if (!me._isPointValid(poi)) {
                 return;
             }
-            // ¼ÇÂ¼µ±Ç°µãµÄÆÁÄ»Î»ÖÃ
+            // è®°å½•å½“å‰ç‚¹çš„å±å¹•ä½ç½®
             me._bind.initX = e.pageX || e.clientX || 0;
             me._bind.initY = e.pageY || e.clientY || 0;
  
-            // Õâ¸öifÑ­»·ÄÚµÄ¼ÆËãÊÇ£¬ÅĞ¶Ïµ±Ç°Õâ¸öµã£¬Óë´æ´¢ÄÚµÄ×îºóÒ»¸öµãµÄ¾àÀë£¬
-            // Èç¹û¾àÀë¹ıĞ¡£¬±ÈÈçĞ¡ÓÚ5£¬¿ÉÒÔÈÏÎªÊÇÓÃ»§µÄÎóµã£¬¿ÉÒÔºöÂÔµô
+            // è¿™ä¸ªifå¾ªç¯å†…çš„è®¡ç®—æ˜¯ï¼Œåˆ¤æ–­å½“å‰è¿™ä¸ªç‚¹ï¼Œä¸å­˜å‚¨å†…çš„æœ€åä¸€ä¸ªç‚¹çš„è·ç¦»ï¼Œ
+            // å¦‚æœè·ç¦»è¿‡å°ï¼Œæ¯”å¦‚å°äº5ï¼Œå¯ä»¥è®¤ä¸ºæ˜¯ç”¨æˆ·çš„è¯¯ç‚¹ï¼Œå¯ä»¥å¿½ç•¥æ‰
             if (me._points.length > 0){
                 var lstPx = map.pointToPixel(me._points[me._points.length - 1]);
                 var thisPx = map.pointToPixel(poi);
@@ -1017,15 +1017,15 @@ var BMapLib = window.BMapLib = BMapLib || {};
             me._bind.x = e.layerX || e.offsetX || 0;
             me._bind.y = e.layerY || e.offsetY || 0;
             me._points.push(poi);
-            // Ìí¼Ó²â¾à½áµã
+            // æ·»åŠ æµ‹è·ç»“ç‚¹
             me._addSecPoint(poi);
  
-            // µ÷Õû¸ú×ÙÊó±êµÄ±êÇ©
+            // è°ƒæ•´è·Ÿè¸ªé¼ æ ‡çš„æ ‡ç­¾
             if (me._paths.length == 0) {
                 me._formatTitle(1, me._opts.followText, me._getTotalDistance());
             }
  
-            // ĞŞ¸ÄÈ·¶¨ÏßµÄÑÕÉ«
+            // ä¿®æ”¹ç¡®å®šçº¿çš„é¢œè‰²
             if (me._paths.length > 0) {
                 me._paths[me._paths.length - 1].show();
                 me._paths[me._paths.length - 1].setStrokeOpacity(me._opts.opacity);
@@ -1036,13 +1036,13 @@ var BMapLib = window.BMapLib = BMapLib || {};
             me._paths.push(path);
             me._overlays.push(path);
  
-            // ²â¾àÄ£Ê½ÏÂÏßÑùÊ½¹Ì¶¨
+            // æµ‹è·æ¨¡å¼ä¸‹çº¿æ ·å¼å›ºå®š
             path.setStrokeWeight(me._opts.lineStroke);
             path.setStrokeColor(me._opts.lineColor);
             path.setStrokeOpacity(me._opts.opacity / 2);
             path.setStrokeStyle(me._opts.lineStyle);           
  
-            // Èç¹ûµØÍ¼ÕıÔÚÒÆ¶¯ÔòÒş²Øµô
+            // å¦‚æœåœ°å›¾æ­£åœ¨ç§»åŠ¨åˆ™éšè—æ‰
             if (me._mapMoving){
                 path.hide();
             }
@@ -1052,15 +1052,15 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 siblingPath.setPositionAt(1, poi);
             }
  
-            // Éú³É½ÚµãÅÔ±ßµÄ¾àÀëÏÔÊ¾¿ò
+            // ç”ŸæˆèŠ‚ç‚¹æ—è¾¹çš„è·ç¦»æ˜¾ç¤ºæ¡†
             var disText = "";
             if (me._points.length > 1) {
-                // ·ÇÆğµãµÄ½Úµã£¬ÏÔÊ¾µ±Ç°µÄ¾àÀë
+                // éèµ·ç‚¹çš„èŠ‚ç‚¹ï¼Œæ˜¾ç¤ºå½“å‰çš„è·ç¦»
                 var segDis = me._setSegDistance(me._points[me._points.length - 2], me._points[me._points.length - 1]);
                 var meters = me._getTotalDistance();
                 disText = me._formatDisStr(meters);
             } else {
-                disText = "Æğµã";
+                disText = "èµ·ç‚¹";
             }                
             var disLabel = new BMap.Label(disText, {offset : new BMap.Size(10, -5), enableMassClear : me._enableMassClear});
             disLabel.setStyles({color : "#333", borderColor : "#ff0103"});
@@ -1071,22 +1071,22 @@ var BMapLib = window.BMapLib = BMapLib || {};
             disLabel.setPosition(poi);
  
             /**
-             * ²â¾à¹ı³ÌÖĞ£¬Ã¿´Îµã»÷µ×Í¼Ìí¼Ó½ÚµãÊ±£¬ÅÉ·¢ÊÂ¼şµÄ½Ó¿Ú
+             * æµ‹è·è¿‡ç¨‹ä¸­ï¼Œæ¯æ¬¡ç‚¹å‡»åº•å›¾æ·»åŠ èŠ‚ç‚¹æ—¶ï¼Œæ´¾å‘äº‹ä»¶çš„æ¥å£
              * @name DistanceTool#onaddpoint
              * @event
-             * @param {Event Object} e »Øµ÷º¯Êı»á·µ»Øevent²ÎÊı£¬°üÀ¨ÒÔÏÂ·µ»ØÖµ£º
-             * <br />{"<b>point</b> : {BMap.Point} ×îĞÂÌí¼ÓÉÏµÄ½ÚµãBMap.Point¶ÔÏó,
-             * <br />"<b>pixel</b>£º{BMap.pixel} ×îĞÂÌí¼ÓÉÏµÄ½ÚµãBMap.Pixel¶ÔÏó,
-             * <br />"<b>index</b>£º{Number} ×îĞÂÌí¼ÓµÄ½ÚµãµÄË÷Òı,
-             * <br />"<b>distance</b>£º{Number} ½ØÖ¹×îĞÂÌí¼ÓµÄ½ÚµãµÄ×Ü¾àÀë}
+             * @param {Event Object} e å›è°ƒå‡½æ•°ä¼šè¿”å›eventå‚æ•°ï¼ŒåŒ…æ‹¬ä»¥ä¸‹è¿”å›å€¼ï¼š
+             * <br />{"<b>point</b> : {BMap.Point} æœ€æ–°æ·»åŠ ä¸Šçš„èŠ‚ç‚¹BMap.Pointå¯¹è±¡,
+             * <br />"<b>pixel</b>ï¼š{BMap.pixel} æœ€æ–°æ·»åŠ ä¸Šçš„èŠ‚ç‚¹BMap.Pixelå¯¹è±¡,
+             * <br />"<b>index</b>ï¼š{Number} æœ€æ–°æ·»åŠ çš„èŠ‚ç‚¹çš„ç´¢å¼•,
+             * <br />"<b>distance</b>ï¼š{Number} æˆªæ­¢æœ€æ–°æ·»åŠ çš„èŠ‚ç‚¹çš„æ€»è·ç¦»}
              *
-             * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+             * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
              * myDistanceToolObject.addEventListener("addpoint", function(e) {  alert(e.distance);  });
              */
  
-            // Éú³ÉÃûÎªonaddpointµÄbaidu.lang.Event¶ÔÏó
-            // ²¢¸ø¸Ãevent¶ÔÏóÌí¼ÓÉÏpoint¡¢pixel¡¢indexºÍdistanceµÈÊôĞÔ×Ö¶Î
-            // È»ºóÔÚ´Ë¿Ì£¬½«°ó¶¨ÔÚonaddpointÉÏÊÂ¼ş£¬È«²¿¸³Óèevent²ÎÊı£¬È»ºóÅÉ·¢³öÈ¥
+            // ç”Ÿæˆåä¸ºonaddpointçš„baidu.lang.Eventå¯¹è±¡
+            // å¹¶ç»™è¯¥eventå¯¹è±¡æ·»åŠ ä¸Špointã€pixelã€indexå’Œdistanceç­‰å±æ€§å­—æ®µ
+            // ç„¶ååœ¨æ­¤åˆ»ï¼Œå°†ç»‘å®šåœ¨onaddpointä¸Šäº‹ä»¶ï¼Œå…¨éƒ¨èµ‹äºˆeventå‚æ•°ï¼Œç„¶åæ´¾å‘å‡ºå»
             var event = new baidu.lang.Event("onaddpoint");
             event.point = poi;
             event.pixel = me._map.pointToPixel(poi);
@@ -1096,18 +1096,18 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ²â¾à¹ı³ÌÖĞ£¬Êó±êÔÚµØÍ¼ÉÏÒÆ¶¯Ê±£¬´¥·¢µÄ²Ù×÷
+         * æµ‹è·è¿‡ç¨‹ä¸­ï¼Œé¼ æ ‡åœ¨åœ°å›¾ä¸Šç§»åŠ¨æ—¶ï¼Œè§¦å‘çš„æ“ä½œ
          * @ignore
-         * @param {Object} e event¶ÔÏó
+         * @param {Object} e eventå¯¹è±¡
          */
         var distMove = function(e) {
             if (!me._isOpen){
                 return;
             }
-            // Í¨¹ıÅĞ¶ÏÊı×éme._pathsµÄ³¤¶È£¬ÅĞ¶Ïµ±Ç°ÊÇ·ñÒÑ¾­ÓĞ²âÁ¿½Úµã
-            // Ò²¾ÍÊÇ£¬Èç¹ûÃ»ÓĞ½Úµã£¬Ôò»¹Ã»ÓĞ¿ªÊ¼²âÁ¿
+            // é€šè¿‡åˆ¤æ–­æ•°ç»„me._pathsçš„é•¿åº¦ï¼Œåˆ¤æ–­å½“å‰æ˜¯å¦å·²ç»æœ‰æµ‹é‡èŠ‚ç‚¹
+            // ä¹Ÿå°±æ˜¯ï¼Œå¦‚æœæ²¡æœ‰èŠ‚ç‚¹ï¼Œåˆ™è¿˜æ²¡æœ‰å¼€å§‹æµ‹é‡
             if (me._paths.length > 0) {
-                // Í¨¹ıevent²ÎÊı£¬¼ÆËãµ±Ç°µãµÄÎ»ÖÃ
+                // é€šè¿‡eventå‚æ•°ï¼Œè®¡ç®—å½“å‰ç‚¹çš„ä½ç½®
                 e = window.event || e;
                 var curX = e.pageX || e.clientX || 0;
                 var curY = e.pageY || e.clientY || 0;
@@ -1120,7 +1120,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 var x = me._bind.x + curX - me._bind.initX;
                 var y = me._bind.y + curY - me._bind.initY;
  
-                // ĞŞ¸Ä×îºóÒ»ÌõÕÛÏßµÄÖÕµãÎ»ÖÃ£¬Ê¹Ö®Ëæ×ÅÊó±êÒÆ¶¯»­Ïß
+                // ä¿®æ”¹æœ€åä¸€æ¡æŠ˜çº¿çš„ç»ˆç‚¹ä½ç½®ï¼Œä½¿ä¹‹éšç€é¼ æ ‡ç§»åŠ¨ç”»çº¿
                 var path = me._paths[me._paths.length - 1];
                 var poi = me._map.pixelToPoint(new BMap.Pixel(x, y));
                 path.setPositionAt(1, poi);
@@ -1130,9 +1130,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 }
                 var dx = 0;
                 var dy = 0;
-                // ¼ÆËãµ±Ç°Êó±êÎ»ÖÃ£¬ÊÇ·ñ¿¿½ü±ß½ç¡¢»òÕßÒÑ¾­³öÁË±ß½ç
-                // Èç¹ûÔÚ±ß½çÎ»ÖÃ£¬ÔòĞèÒªÏò¶ÔÓ¦µÄ·½ÏòÒÆ¶¯µØÍ¼£¬À´½øĞĞ²âÁ¿
-                // Ã¿´ÎÒÆ¶¯µÄ¾àÀë£¬Éè¶¨Îª8
+                // è®¡ç®—å½“å‰é¼ æ ‡ä½ç½®ï¼Œæ˜¯å¦é è¿‘è¾¹ç•Œã€æˆ–è€…å·²ç»å‡ºäº†è¾¹ç•Œ
+                // å¦‚æœåœ¨è¾¹ç•Œä½ç½®ï¼Œåˆ™éœ€è¦å‘å¯¹åº”çš„æ–¹å‘ç§»åŠ¨åœ°å›¾ï¼Œæ¥è¿›è¡Œæµ‹é‡
+                // æ¯æ¬¡ç§»åŠ¨çš„è·ç¦»ï¼Œè®¾å®šä¸º8
                 if (x < 10) {
                     dx = 8;
                 } else if (x > me._map.getSize().width - 10){
@@ -1143,27 +1143,27 @@ var BMapLib = window.BMapLib = BMapLib || {};
                 } else if (y > me._map.getSize().height - 10){
                     dy = -8;
                 }
-                // Èç¹ûdxºÍdy¶¼µÈÓÚ0£¬±íÃ÷²»ĞèÒªÒÆ¶¯µØÍ¼
+                // å¦‚æœdxå’Œdyéƒ½ç­‰äº0ï¼Œè¡¨æ˜ä¸éœ€è¦ç§»åŠ¨åœ°å›¾
                 if (dx != 0 || dy != 0){
-                    // ´ËÊ±ĞèÒªÏòÒ»¸ö·½Ïò£¬Æ½ÒÆµØÍ¼
+                    // æ­¤æ—¶éœ€è¦å‘ä¸€ä¸ªæ–¹å‘ï¼Œå¹³ç§»åœ°å›¾
                     if (!distMove._movingTimerId){
                         me._mapMoving = true;
                         me._map.panBy(dx, dy, {noAnimation : true});                        
                         me._movingTimerId = distMove._movingTimerId = setInterval(function(){
                             me._map.panBy(dx, dy, {noAnimation : true});
                         }, 30);
-                        // µØÍ¼ÒÆ¶¯¹ı³ÌÖĞ£¬Òş²ØÏß¶ÎºÍ±êÇ©
+                        // åœ°å›¾ç§»åŠ¨è¿‡ç¨‹ä¸­ï¼Œéšè—çº¿æ®µå’Œæ ‡ç­¾
                         path.hide();
                         me._followTitle && me._followTitle.hide();
                     }
                 } else {
                     if (distMove._movingTimerId) {
-                        // ´ËÊ±ÓÃ»§²»ÔÚĞèÒªÒÆ¶¯µØÍ¼À´²âÁ¿£¬¿ÉÒÔÇå³ı¼ÆÊ±Æ÷
+                        // æ­¤æ—¶ç”¨æˆ·ä¸åœ¨éœ€è¦ç§»åŠ¨åœ°å›¾æ¥æµ‹é‡ï¼Œå¯ä»¥æ¸…é™¤è®¡æ—¶å™¨
                         clearInterval(distMove._movingTimerId);
                         delete distMove._movingTimerId;
                         delete me._movingTimerId;
  
-                        // ÏÔÊ¾¸úËæÌáÊ¾¿ò£¬²¢ĞŞ¸ÄÏßÂ·Î»ÖÃ
+                        // æ˜¾ç¤ºè·Ÿéšæç¤ºæ¡†ï¼Œå¹¶ä¿®æ”¹çº¿è·¯ä½ç½®
                         var lstP = me._paths[me._paths.length - 1];
                         var poiN = me._map.pixelToPoint(new BMap.Pixel(x, y));
                         if (!lstP) {
@@ -1180,14 +1180,14 @@ var BMapLib = window.BMapLib = BMapLib || {};
                         delete me._mapMoving;
                     }
                 }
-                // ÊµÊ±¸üĞÂÎÄ×ÖÌáÊ¾¿òÖĞµÄ¾àÀë
+                // å®æ—¶æ›´æ–°æ–‡å­—æç¤ºæ¡†ä¸­çš„è·ç¦»
                 if (me._followTitle) {
                     var td = me._getTotalDistance();
                     var dis = me._map.getDistance(me._points[me._points.length - 1], poi);
                     me._updateInstDis(me._followTitle, td + dis);
                 }
             } else {
-                // ´ËÊ±ÓÃ»§»¹Ã»ÓĞ¿ªÊ¼²âÁ¿£¬Ö»ÊÇÊó±êËæ±ãÔÚµØÍ¼ÉÏÒÆ¶¯
+                // æ­¤æ—¶ç”¨æˆ·è¿˜æ²¡æœ‰å¼€å§‹æµ‹é‡ï¼Œåªæ˜¯é¼ æ ‡éšä¾¿åœ¨åœ°å›¾ä¸Šç§»åŠ¨
                 if (me._followTitle) {
                     me._followTitle.show();
                     e = window.event || e;
@@ -1200,36 +1200,36 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ²â¾àÒª½áÊøÊ±£¬Ë«»÷µØÍ¼£¬´¥·¢µÄ²Ù×÷
+         * æµ‹è·è¦ç»“æŸæ—¶ï¼ŒåŒå‡»åœ°å›¾ï¼Œè§¦å‘çš„æ“ä½œ
          * @ignore
-         * @param {Object} e event¶ÔÏó
+         * @param {Object} e eventå¯¹è±¡
          */
         var distDblclick = function(e) {
             if (!me._isOpen) {
                 return;
             }
-            // ½áÊøÊ±£¬É¾³ı°ó¶¨µÄÊÂ¼ş
+            // ç»“æŸæ—¶ï¼Œåˆ é™¤ç»‘å®šçš„äº‹ä»¶
             baidu.un(OperationMask.getDom(me._map), "click", distClick);
             baidu.un(document, "mousemove", distMove);
             baidu.un(OperationMask.getDom(me._map), "dblclick", distDblclick);            
             baidu.un(document, "keydown", distKeyDown);
             baidu.un(OperationMask.getDom(me._map), "mouseup", distMouseUp);
  
-            // µ÷ÓÃclose()¹Ø±Õ²â¾à×´Ì¬
+            // è°ƒç”¨close()å…³é—­æµ‹è·çŠ¶æ€
             setTimeout(function(){
                 me.close();
             }, 50);
         };
         
         /**
-         * ²â¾àÊ±µÄ¼üÅÌ²Ù×÷
+         * æµ‹è·æ—¶çš„é”®ç›˜æ“ä½œ
          * @ignore
-         * @param {Object} e event¶ÔÏó
+         * @param {Object} e eventå¯¹è±¡
          */
         var distKeyDown = function(e){
             e = window.event || e;
             if (e.keyCode == 27){ 
-                // [ESC]ÍË³ö±¾´Î²â¾à
+                // [ESC]é€€å‡ºæœ¬æ¬¡æµ‹è·
                 me._clearCurData();
                 setTimeout(function(){
                     me.close();
@@ -1238,9 +1238,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
         };
  
         /**
-         * ²â¾à¹ı³ÌÖĞ£¬Êó±êµ¯ÆğÊ±£¬´¥·¢µÄ²Ù×÷
+         * æµ‹è·è¿‡ç¨‹ä¸­ï¼Œé¼ æ ‡å¼¹èµ·æ—¶ï¼Œè§¦å‘çš„æ“ä½œ
          * @ignore
-         * @param {Object} e event¶ÔÏó
+         * @param {Object} e eventå¯¹è±¡
          */
         var distMouseUp = function(e) {
             e = window.event || e;
@@ -1255,24 +1255,24 @@ var BMapLib = window.BMapLib = BMapLib || {};
             }
         };
  
-        // ³õÊ¼»¯´æ´¢Êı¾İ
+        // åˆå§‹åŒ–å­˜å‚¨æ•°æ®
         me._initData();
  
-        // µ÷ÕûtitleµÄÄÚÈİ
+        // è°ƒæ•´titleçš„å†…å®¹
         this._formatTitle();
  
-        // ´´½¨Í¸Ã÷¸²¸Ç²ã£¬²¢ÉèÖÃÊó±êÑùÊ½
+        // åˆ›å»ºé€æ˜è¦†ç›–å±‚ï¼Œå¹¶è®¾ç½®é¼ æ ‡æ ·å¼
         OperationMask.show(this._map);
         this._setCursor(this._opts.cursor);
  
-        // °ó¶¨È«²¿ÊÂ¼ş
+        // ç»‘å®šå…¨éƒ¨äº‹ä»¶
         baidu.on(OperationMask.getDom(this._map), "click", distClick);
         baidu.on(document, "mousemove", distMove);
         baidu.on(OperationMask.getDom(this._map), "dblclick", distDblclick);
         baidu.on(document, "keydown", distKeyDown);
         baidu.on(OperationMask.getDom(this._map), "mouseup", distMouseUp);
         
-        // ½«°ó¶¨µÄÊÂ¼ş¡¢ºÍ¶ÔÓ¦µÄ°ó¶¨¶ÔÏó£¬¼ÇÂ¼ÔÚÊı×éÖĞ
+        // å°†ç»‘å®šçš„äº‹ä»¶ã€å’Œå¯¹åº”çš„ç»‘å®šå¯¹è±¡ï¼Œè®°å½•åœ¨æ•°ç»„ä¸­
         this.bindFunc = [
             {elem : OperationMask.getDom(this._map), type : "click", func : distClick}, 
             {elem : OperationMask.getDom(this._map), type : "dblclick", func : distDblclick},
@@ -1283,26 +1283,26 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * »­Ïß½áÊøÊ±£¬ÅÉ·¢drawendÊÂ¼ş
-     * @return ÎŞ·µ»ØÖµ
+     * ç”»çº¿ç»“æŸæ—¶ï¼Œæ´¾å‘drawendäº‹ä»¶
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._dispatchLastEvent = function() {
         /**
-         * ²â¾àÊ±£¬Ã¿´ÎË«»÷µ×Í¼½áÊøµ±Ç°²â¾àÕÛÏßÊ±£¬ÅÉ·¢ÊÂ¼şµÄ½Ó¿Ú
+         * æµ‹è·æ—¶ï¼Œæ¯æ¬¡åŒå‡»åº•å›¾ç»“æŸå½“å‰æµ‹è·æŠ˜çº¿æ—¶ï¼Œæ´¾å‘äº‹ä»¶çš„æ¥å£
          * @name DistanceTool#ondrawend
          * @event
-         * @param {Event Object} e »Øµ÷º¯Êı»á·µ»Øevent²ÎÊı£¬°üÀ¨ÒÔÏÂ·µ»ØÖµ£º
-         * <br />{"<b>points</b> : {BMap.Point} ËùÓĞ²âÁ¿Ê±£¬´òÏÂµÄ½ÚµãBMap.Point¶ÔÏó,
-         * <br />"<b>overlays</b>£º{Array} ËùÓĞ²âÁ¿Ê±£¬Éú³ÉµÄÏß¶ÎBMap.Overlay¶ÔÏó,
-         * <br />"<b>distance</b>£º{Number} ²âÁ¿½âÊÍÊ±µÄ×îÖÕ¾àÀë}
+         * @param {Event Object} e å›è°ƒå‡½æ•°ä¼šè¿”å›eventå‚æ•°ï¼ŒåŒ…æ‹¬ä»¥ä¸‹è¿”å›å€¼ï¼š
+         * <br />{"<b>points</b> : {BMap.Point} æ‰€æœ‰æµ‹é‡æ—¶ï¼Œæ‰“ä¸‹çš„èŠ‚ç‚¹BMap.Pointå¯¹è±¡,
+         * <br />"<b>overlays</b>ï¼š{Array} æ‰€æœ‰æµ‹é‡æ—¶ï¼Œç”Ÿæˆçš„çº¿æ®µBMap.Overlayå¯¹è±¡,
+         * <br />"<b>distance</b>ï¼š{Number} æµ‹é‡è§£é‡Šæ—¶çš„æœ€ç»ˆè·ç¦»}
          *
-         * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+         * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
          * myDistanceToolObject.addEventListener("drawend", function(e) {  alert(e.distance);  });
          */
  
-        // Éú³ÉÃûÎªondrawendµÄbaidu.lang.Event¶ÔÏó
-        // ²¢¸ø¸Ãevent¶ÔÏóÌí¼ÓÉÏpoints¡¢overlaysºÍdistanceµÈÊôĞÔ×Ö¶Î
-        // È»ºóÔÚ´Ë¿Ì£¬½«°ó¶¨ÔÚondrawendÉÏÊÂ¼ş£¬È«²¿¸³Óèevent²ÎÊı£¬È»ºóÅÉ·¢³öÈ¥
+        // ç”Ÿæˆåä¸ºondrawendçš„baidu.lang.Eventå¯¹è±¡
+        // å¹¶ç»™è¯¥eventå¯¹è±¡æ·»åŠ ä¸Špointsã€overlayså’Œdistanceç­‰å±æ€§å­—æ®µ
+        // ç„¶ååœ¨æ­¤åˆ»ï¼Œå°†ç»‘å®šåœ¨ondrawendä¸Šäº‹ä»¶ï¼Œå…¨éƒ¨èµ‹äºˆeventå‚æ•°ï¼Œç„¶åæ´¾å‘å‡ºå»
         var event = new baidu.lang.Event("ondrawend");
         event.points = 
             this._points ? 
@@ -1317,10 +1317,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ¹Ø±Õ²â¾à×´Ì¬
-     * @return ÎŞ·µ»ØÖµ
+     * å…³é—­æµ‹è·çŠ¶æ€
+     * @return æ— è¿”å›å€¼
      *
-     * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+     * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
      * myDistanceToolObject.close();
      */
     DistanceTool.prototype.close = function(){
@@ -1336,13 +1336,13 @@ var BMapLib = window.BMapLib = BMapLib || {};
         var me = this;
         me._dispatchLastEvent();
         if (me._points.length < 2){
-            // ²»ÊÇÓĞĞ§»æÖÆ£¬Çå³ıËùÓĞÄÚÈİ
+            // ä¸æ˜¯æœ‰æ•ˆç»˜åˆ¶ï¼Œæ¸…é™¤æ‰€æœ‰å†…å®¹
             me._clearCurData();
         } else {
             me._paths[me._paths.length - 1].remove();
             me._paths[me._paths.length - 1] = null;
             me._paths.length = me._paths.length - 1;
-            // ÒÆ³ı×î½üÒ»´Î±ê¼Ç
+            // ç§»é™¤æœ€è¿‘ä¸€æ¬¡æ ‡è®°
             var pt = me._points[me._points.length - 1];
             if (pt.disLabel){
                 pt.disLabel.remove();
@@ -1351,12 +1351,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
         }
         OperationMask.hide();
  
-        // É¾³ı°ó¶¨µÄÊÂ¼ş
+        // åˆ é™¤ç»‘å®šçš„äº‹ä»¶
         for (var i = 0, l = this.bindFunc.length; i < l; i ++){
             baidu.un(this.bindFunc[i].elem, this.bindFunc[i].type, this.bindFunc[i].func);
         }
  
-        // Í£Ö¹µØÍ¼ÒÆ¶¯
+        // åœæ­¢åœ°å›¾ç§»åŠ¨
         if (me._movingTimerId){
             clearInterval(me._movingTimerId);
             me._movingTimerId = null;
@@ -1368,8 +1368,8 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * Çå³ı±¾´Î²â¾àµÄÔİ´æÊı¾İ
-     * @return ÎŞ·µ»ØÖµ
+     * æ¸…é™¤æœ¬æ¬¡æµ‹è·çš„æš‚å­˜æ•°æ®
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._clearCurData = function(){
         for (var i = 0, l = this._points.length; i < l; i ++){
@@ -1387,25 +1387,25 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ³õÊ¼»¯´æ´¢Êı×é
-     * @return ÎŞ·µ»ØÖµ
+     * åˆå§‹åŒ–å­˜å‚¨æ•°ç»„
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._initData = function(){
-        // ³õÊ¼»¯pointÊı×é
+        // åˆå§‹åŒ–pointæ•°ç»„
         this._points.length = 0;
-        // ³õÊ¼»¯pathÊı×é
+        // åˆå§‹åŒ–pathæ•°ç»„
         this._paths.length = 0;
-        // ³õÊ¼»¯·Ö¶Î¾àÀëÊı×é
+        // åˆå§‹åŒ–åˆ†æ®µè·ç¦»æ•°ç»„
         this._segDistance.length = 0;
-        // ³õÊ¼»¯½áµãÍ¼ÏñÊı×é
+        // åˆå§‹åŒ–ç»“ç‚¹å›¾åƒæ•°ç»„
         this._dots.length = 0;
     };
  
     /**
-     * ¼ÆËãÁ½µãÖ®¼ä¾àÀë²¢´æ·ÅÔÚ·Ö¶Î¾àÀëÊı×éÖĞ
+     * è®¡ç®—ä¸¤ç‚¹ä¹‹é—´è·ç¦»å¹¶å­˜æ”¾åœ¨åˆ†æ®µè·ç¦»æ•°ç»„ä¸­
      * @param {Point}
      * @param {Point}
-     * @return {Number} Á½¸öµØÀíµãÖ®¼äµÄ¾àÀë
+     * @return {Number} ä¸¤ä¸ªåœ°ç†ç‚¹ä¹‹é—´çš„è·ç¦»
      */
     DistanceTool.prototype._setSegDistance = function(pt0, pt1){
         if (!pt0 || !pt1){
@@ -1417,8 +1417,8 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * »ñµÃ×Ü¾àÀë
-     * @return {Number} ×Ü¾àÀë
+     * è·å¾—æ€»è·ç¦»
+     * @return {Number} æ€»è·ç¦»
      */
     DistanceTool.prototype._getTotalDistance = function(){
         var totalDis = 0;
@@ -1429,12 +1429,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ½«Ã×ÖÆµ¥Î»µÄÊıÖµ»»Ëã³ÉÎªÄ¿±êµ¥Î»ÏÂµÄÊıÖµ
-     * @type {Number} ĞèÒª×ª»»µÄÊıÖµ
-     * @type {String} ×Ö·û´®ÃèÊöµÄÄ¿±êµ¥Î»£¬
-     * "metric" ±íÊ¾Ã×ÖÆµ¥Î»£¬
-     * "us" ±íÊ¾ÃÀ¹ú´«Í³µ¥Î»ÖÆ
-     * @return {Number} ×ª»»ºóµÄÊıÖµ
+     * å°†ç±³åˆ¶å•ä½çš„æ•°å€¼æ¢ç®—æˆä¸ºç›®æ ‡å•ä½ä¸‹çš„æ•°å€¼
+     * @type {Number} éœ€è¦è½¬æ¢çš„æ•°å€¼
+     * @type {String} å­—ç¬¦ä¸²æè¿°çš„ç›®æ ‡å•ä½ï¼Œ
+     * "metric" è¡¨ç¤ºç±³åˆ¶å•ä½ï¼Œ
+     * "us" è¡¨ç¤ºç¾å›½ä¼ ç»Ÿå•ä½åˆ¶
+     * @return {Number} è½¬æ¢åçš„æ•°å€¼
      */
     DistanceTool.prototype._convertUnit = function(num, unit){
         unit = unit || "metric";
@@ -1445,9 +1445,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * Ìí¼Ó²â¾à½áµã
-     * @param {BMap.Point} ½Úµã
-     * @return ÎŞ·µ»ØÖµ
+     * æ·»åŠ æµ‹è·ç»“ç‚¹
+     * @param {BMap.Point} èŠ‚ç‚¹
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._addSecPoint = function(pt){
         var ico = 
@@ -1466,9 +1466,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ¸ñÊ½»¯¾àÀë×Ö·û´®
-     * @param {Number} ¾àÀë
-     * @return {String} ¸ñÊ½»¯µÄ×Ö·û´®
+     * æ ¼å¼åŒ–è·ç¦»å­—ç¬¦ä¸²
+     * @param {Number} è·ç¦»
+     * @return {String} æ ¼å¼åŒ–çš„å­—ç¬¦ä¸²
      */
     DistanceTool.prototype._formatDisStr = function(distance){
         var u = this._opts.unit;
@@ -1486,12 +1486,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ÉèÖÃÊó±êÑùÊ½
-     * @param {String} cursor Êó±êÑùÊ½
-     * @return Ã»ÓĞ·µ»ØÖµ
+     * è®¾ç½®é¼ æ ‡æ ·å¼
+     * @param {String} cursor é¼ æ ‡æ ·å¼
+     * @return æ²¡æœ‰è¿”å›å€¼
      */
     DistanceTool.prototype._setCursor = function(cursor){
-        // ÓÉÓÚwebkitÄÚºËä¯ÀÀÆ÷ÏÂ£¬cursorÉèÖÃºóÄ¬ÈÏ²»»á¾ÓÖĞ£¬ËùÒÔĞèÒª¶ÔÆ«ÒÆÖµ½øĞĞÉèÖÃ
+        // ç”±äºwebkitå†…æ ¸æµè§ˆå™¨ä¸‹ï¼Œcursorè®¾ç½®åé»˜è®¤ä¸ä¼šå±…ä¸­ï¼Œæ‰€ä»¥éœ€è¦å¯¹åç§»å€¼è¿›è¡Œè®¾ç½®
         var csr = 
             /webkit/.test(navigator.userAgent.toLowerCase()) ?
                 "url(" + this._opts.cursor + ") 3 6, crosshair" :
@@ -1500,18 +1500,18 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * »ñÈ¡Êó±êÑùÊ½
-     * @return {String} ¸úËæµÄÊó±êÑùÊ½
+     * è·å–é¼ æ ‡æ ·å¼
+     * @return {String} è·Ÿéšçš„é¼ æ ‡æ ·å¼
      */
     DistanceTool.prototype._getCursor = function(){
         return this._opts.cursor;
     };
  
     /**
-     * µ÷Õû·Ö¶Î¾àÀëÑùÊ½
-     * @param {BMap.Label} label ÌáÊ¾¿òµÄLabel
-     * @param {String} ĞèÒªÌîÈëµÄÎÄ×Ö
-     * @return Ã»ÓĞ·µ»ØÖµ
+     * è°ƒæ•´åˆ†æ®µè·ç¦»æ ·å¼
+     * @param {BMap.Label} label æç¤ºæ¡†çš„Label
+     * @param {String} éœ€è¦å¡«å…¥çš„æ–‡å­—
+     * @return æ²¡æœ‰è¿”å›å€¼
      */
     DistanceTool.prototype._formatSegLabel = function(label, text){
         label.setStyle({"border" : "none", "padding" : "0"});
@@ -1519,49 +1519,49 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ´¦Àí×îºóÒ»´Î²Ù×÷£¬µ±ÓÃ»§Ë«»÷»ò²â¾à±»Ç¿ĞĞÍË³öÊ±µ÷ÓÃ
-     * @return Ã»ÓĞ·µ»ØÖµ
+     * å¤„ç†æœ€åä¸€æ¬¡æ“ä½œï¼Œå½“ç”¨æˆ·åŒå‡»æˆ–æµ‹è·è¢«å¼ºè¡Œé€€å‡ºæ—¶è°ƒç”¨
+     * @return æ²¡æœ‰è¿”å›å€¼
      */
     DistanceTool.prototype._processLastOp = function() {
         var me = this;
-        // É¾³ıÉÏ´ÎÒÆ¶¯ÁÙÊ±Êı¾İ
+        // åˆ é™¤ä¸Šæ¬¡ç§»åŠ¨ä¸´æ—¶æ•°æ®
         delete me._bind.x;
         delete me._bind.y;
         delete me._bind.initX;
         delete me._bind.initY;
-        // ÑéÖ¤Â·¾¶
+        // éªŒè¯è·¯å¾„
         if (me._paths.length > me._points.length - 1){
             var l = me._paths.length - 1;
             me._paths[l].remove();
             me._paths[l] = null;
             me._paths.length = l;
         }
-        // ±£´æ±¾´Î²â¾à¶ÔÏó
+        // ä¿å­˜æœ¬æ¬¡æµ‹è·å¯¹è±¡
         var disObj = {};
         disObj.points = me._points.slice(0);
         disObj.paths  = me._paths.slice(0);
         disObj.dots   = me._dots.slice(0);
         disObj.segDis = me._segDistance.slice(0);
-        // ÅĞ¶Ï×Ü¾àÀëºÍ°´Å¥Î»ÖÃ
+        // åˆ¤æ–­æ€»è·ç¦»å’ŒæŒ‰é’®ä½ç½®
         var lstPx = me._map.pointToPixel(disObj.points[disObj.points.length - 1]);
         var prePx = me._map.pointToPixel(disObj.points[disObj.points.length - 2]);
         var btnOffset = [0, 0];
         var disOffset = [0, 0];
         if (lstPx.y - prePx.y >= 0){
-            // ¾àÀëÎ»ÓÚÏÂ¶Ë
+            // è·ç¦»ä½äºä¸‹ç«¯
             disOffset = [-5, 11];
         } else {
-            // ¾àÀëÎ»ÓÚÉÏ¶Ë
+            // è·ç¦»ä½äºä¸Šç«¯
             disOffset = [-5, -35];
         }
         if (lstPx.x - prePx.x >= 0){
-            // °´Å¥Î»ÓÚÓÒ²à
+            // æŒ‰é’®ä½äºå³ä¾§
             btnOffset = [14, 0];
         } else {
-            // °´Å¥Î»ÓÚ×ó²à
+            // æŒ‰é’®ä½äºå·¦ä¾§
             btnOffset = [-14, 0];
         }
-        // ÏÔÊ¾×Ü¾àÀë
+        // æ˜¾ç¤ºæ€»è·ç¦»
         var pt = disObj.points[disObj.points.length - 1];
         pt.disLabel = new BMap.Label("", {offset: new BMap.Size(-15, -40), enableMassClear: me._enableMassClear});
         pt.disLabel.setStyles({color: "#333", borderColor: "#ff0103"});
@@ -1569,7 +1569,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
         pt.disLabel.setOffset(new BMap.Size(disOffset[0], disOffset[1]));
         pt.disLabel.setPosition(pt);
         me._formatTitle(2, "", "", pt.disLabel);
-        // Ìí¼Ó¹Ø±Õ°´Å¥
+        // æ·»åŠ å…³é—­æŒ‰é’®
         var bico = 
             this._opts.closeIcon ? 
                 this._opts.closeIcon :
@@ -1581,10 +1581,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
             enableMassClear : me._enableMassClear}
         );
         me._map.addOverlay(disObj.closeBtn);
-        disObj.closeBtn.setTitle("Çå³ı±¾´Î²â¾à");
-        // µã»÷¹Ø±Õ°´Å¥£¬°ó¶¨¹Ø±Õ°´Å¥ÊÂ¼ş
+        disObj.closeBtn.setTitle("æ¸…é™¤æœ¬æ¬¡æµ‹è·");
+        // ç‚¹å‡»å…³é—­æŒ‰é’®ï¼Œç»‘å®šå…³é—­æŒ‰é’®äº‹ä»¶
         disObj.closeBtn.addEventListener("click", function(e){
-            // ¹Ø±Õ±¾´Î²â¾à£¬Çå³ıÏà¹Ø´æ´¢ºÍ±äÁ¿
+            // å…³é—­æœ¬æ¬¡æµ‹è·ï¼Œæ¸…é™¤ç›¸å…³å­˜å‚¨å’Œå˜é‡
             for (var i = 0, l = disObj.points.length; i < l; i ++){
                 disObj.points[i].disLabel.remove();
                 disObj.points[i].disLabel = null;
@@ -1603,17 +1603,17 @@ var BMapLib = window.BMapLib = BMapLib || {};
             
             /**
              * @ignore
-             * ²â¾à½áÊøºó£¬µã»÷Ïß¶ÎÉÏ×îºóÒ»¸ö½ÚµãÅÔµÄ¹Ø±Õ°´Å¥Ê±£¬ÅÉ·¢ÊÂ¼şµÄ½Ó¿Ú
+             * æµ‹è·ç»“æŸåï¼Œç‚¹å‡»çº¿æ®µä¸Šæœ€åä¸€ä¸ªèŠ‚ç‚¹æ—çš„å…³é—­æŒ‰é’®æ—¶ï¼Œæ´¾å‘äº‹ä»¶çš„æ¥å£
              * @name DistanceTool#onremovepolyline
              * @event
-             * @param {Event Object} e »Øµ÷º¯Êı»á·µ»Øevent²ÎÊı
+             * @param {Event Object} e å›è°ƒå‡½æ•°ä¼šè¿”å›eventå‚æ•°
              *
-             * @example <b>²Î¿¼Ê¾Àı£º</b><br />
+             * @example <b>å‚è€ƒç¤ºä¾‹ï¼š</b><br />
              * myDistanceToolObject.addEventListener("removepolyline", function(e) {  alert(e.type);  });
              */
  
-            // Éú³ÉÃûÎªonremovepolylineµÄbaidu.lang.Event¶ÔÏó
-            // È»ºóÔÚ´Ë¿Ì£¬½«°ó¶¨ÔÚonremovepolylineÉÏÊÂ¼ş£¬È«²¿¸³Óèevent²ÎÊı£¬È»ºóÅÉ·¢³öÈ¥
+            // ç”Ÿæˆåä¸ºonremovepolylineçš„baidu.lang.Eventå¯¹è±¡
+            // ç„¶ååœ¨æ­¤åˆ»ï¼Œå°†ç»‘å®šåœ¨onremovepolylineä¸Šäº‹ä»¶ï¼Œå…¨éƒ¨èµ‹äºˆeventå‚æ•°ï¼Œç„¶åæ´¾å‘å‡ºå»
             var event = new baidu.lang.Event("onremovepolyline");
             me.dispatchEvent(event);
         });        
@@ -1621,12 +1621,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * Éú³É²â¾à¹ı³ÌÖĞµÄÎÄ×ÖÌáÊ¾¿ò
+     * ç”Ÿæˆæµ‹è·è¿‡ç¨‹ä¸­çš„æ–‡å­—æç¤ºæ¡†
      * @param {String} type
      * @param {String} text 
      * @param {String} distance
      * @param {Label} label
-     * @return ÎŞ·µ»ØÖµ
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._formatTitle = function(type, text, distance, label){
         var title = label || this._followTitle;
@@ -1637,7 +1637,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
         var t = this._startFollowText || "";
         var htmls = [];
         if (type == 1){
-            // ²â¾à¹ı³ÌÖĞµÄÌáÊ¾
+            // æµ‹è·è¿‡ç¨‹ä¸­çš„æç¤º
             title.setOffset(0, 25);
             var u = this._opts.unit;
             var unit = this._units[u].u1;
@@ -1649,10 +1649,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
             } else {
                 dis = dis.toFixed(0);
             }
-            htmls.push("<span>×Ü³¤£º<span style='" + this._styles.BMapLib_disBoxDis+"'>" + dis + "</span>" + unit + "</span><br />");
+            htmls.push("<span>æ€»é•¿ï¼š<span style='" + this._styles.BMapLib_disBoxDis+"'>" + dis + "</span>" + unit + "</span><br />");
             htmls.push("<span style='color:#7a7a7a'>" + text + "</span>");
         } else if (type == 2) {
-            // ½áÊøÊ±µÄ×Ü¾àÀëÕ¹Ê¾
+            // ç»“æŸæ—¶çš„æ€»è·ç¦»å±•ç¤º
             var u = this._opts.unit;
             var unit = this._units[u].u1;
             var dis = this._convertUnit(this._getTotalDistance(), u);
@@ -1663,7 +1663,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
             } else{
                 dis = dis.toFixed(0);
             }
-            htmls.push("×Ü³¤£º<span style='" + this._styles.BMapLib_disBoxDis + "'>" + dis + "</span>" + unit);
+            htmls.push("æ€»é•¿ï¼š<span style='" + this._styles.BMapLib_disBoxDis + "'>" + dis + "</span>" + unit);
         } else {
             title.setOffset(0, 25);
             htmls.push(t);
@@ -1672,12 +1672,12 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ¸üĞÂlabelµÄ¾àÀë
-     * @param HTMLElement labelµÄDOMÔªËØ
-     * @param Number ¾àÀë
+     * æ›´æ–°labelçš„è·ç¦»
+     * @param HTMLElement labelçš„DOMå…ƒç´ 
+     * @param Number è·ç¦»
      */
     DistanceTool.prototype._updateInstDis = function(label, dis){
-        // »»Ëã¾àÀë
+        // æ¢ç®—è·ç¦»
         var u = this._opts.unit;
         var unit = this._units[u].u1;
         if (dis > this._units[u].incon){
@@ -1687,18 +1687,18 @@ var BMapLib = window.BMapLib = BMapLib || {};
         } else {
             dis = dis.toFixed(0);
         }
-        // ĞŞ¸ÄLabelµÄÄÚÈİ
+        // ä¿®æ”¹Labelçš„å†…å®¹
         if (label) {
             var htmls = [];
-            htmls.push("<span>×Ü³¤£º<span style='" + this._styles.BMapLib_disBoxDis + "'>" + dis + "</span>" + unit + "</span><br />");
+            htmls.push("<span>æ€»é•¿ï¼š<span style='" + this._styles.BMapLib_disBoxDis + "'>" + dis + "</span>" + unit + "</span><br />");
             htmls.push("<span style='color:#7a7a7a'>" + this._opts.followText + "</span>");
             label.setContent(htmls.join(""));
         }
     };
  
     /**
-     * Òş²ØÏà¹ØµÄÏß¶ÎºÍÌáÊ¾¿òÎÄ×Ö
-     * @return ÎŞ·µ»ØÖµ
+     * éšè—ç›¸å…³çš„çº¿æ®µå’Œæç¤ºæ¡†æ–‡å­—
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._hideCurrent = function(){
         if (!this._isOpen){
@@ -1712,9 +1712,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * ÑéÖ¤´«ÈëµãµÄÎ»ÖÃºÏÀíĞÔ
-     * @param {BMap.Point} pt ĞèÒª±»ÑéÖ¤µÄpointµã
-     * @return ÎŞ·µ»ØÖµ
+     * éªŒè¯ä¼ å…¥ç‚¹çš„ä½ç½®åˆç†æ€§
+     * @param {BMap.Point} pt éœ€è¦è¢«éªŒè¯çš„pointç‚¹
+     * @return æ— è¿”å›å€¼
      */
     DistanceTool.prototype._isPointValid = function(pt){
         if (!pt){
@@ -1734,45 +1734,45 @@ var BMapLib = window.BMapLib = BMapLib || {};
  
  
     /**
-     * OperationMask£¬Í¸Ã÷¸²¸Ç²ã£¬ÔÚµØÍ¼ÉÏ½øĞĞÊó±ê»æÖÆ²Ù×÷Ê±Ê¹ÓÃ£¬
-     * ±Õ°ü£¬¶ÔÍâ²»±©Â¶
+     * OperationMaskï¼Œé€æ˜è¦†ç›–å±‚ï¼Œåœ¨åœ°å›¾ä¸Šè¿›è¡Œé¼ æ ‡ç»˜åˆ¶æ“ä½œæ—¶ä½¿ç”¨ï¼Œ
+     * é—­åŒ…ï¼Œå¯¹å¤–ä¸æš´éœ²
      */
     var OperationMask = {
         /**
-         * map¶ÔÏó
+         * mapå¯¹è±¡
          * @type {Map}
          */
         _map : null,
  
         /**
-         * HTML×Ö·û´®
+         * HTMLå­—ç¬¦ä¸²
          * @type {String}
          */
         _html : "<div style='background:transparent url(http://api.map.baidu.com/images/blank.gif);position:absolute;left:0;top:0;width:100%;height:100%;z-index:1000' unselectable='on'></div>",
  
         /**
-         * htmlÔªËØ
+         * htmlå…ƒç´ 
          * @type {HTMLElement}
          */
         _maskElement : null,
  
         /**
-         * Êó±êÖ¸Õë
+         * é¼ æ ‡æŒ‡é’ˆ
          * @type {String}
          */
         _cursor: 'default',
  
         /**
-         * ²Ù×÷²ãÊÇ·ñÔÚÊ¹ÓÃÖĞ
+         * æ“ä½œå±‚æ˜¯å¦åœ¨ä½¿ç”¨ä¸­
          * @type {Boolean}
          */
         _inUse: false,
  
         /**
-         * Í¸Ã÷¸²¸Ç²ãµÄÏÔÊ¾
+         * é€æ˜è¦†ç›–å±‚çš„æ˜¾ç¤º
          *
-         * @param {Map} map map¶ÔÏó
-         * @return ÎŞ·µ»ØÖµ
+         * @param {Map} map mapå¯¹è±¡
+         * @return æ— è¿”å›å€¼
          */
         show : function(map) {
             if (!this._map) {
@@ -1786,10 +1786,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
         },
  
         /**
-         * ´´½¨¸²¸Ç²ã
+         * åˆ›å»ºè¦†ç›–å±‚
          *
-         * @param {Map} map map¶ÔÏó
-         * @return ÎŞ·µ»ØÖµ
+         * @param {Map} map mapå¯¹è±¡
+         * @return æ— è¿”å›å€¼
          */
         _createMask : function(map) {
             this._map = map;
@@ -1813,11 +1813,11 @@ var BMapLib = window.BMapLib = BMapLib || {};
         },
  
         /**
-         * »ñÈ¡µ±Ç°»æÖÆµãµÄµØÀí×ø±ê
+         * è·å–å½“å‰ç»˜åˆ¶ç‚¹çš„åœ°ç†åæ ‡
          *
-         * @param {Event} e e¶ÔÏó
-         * @param {Boolean} n ÊÇ·ñÏòÉÏ²éµ½Ïà¶ÔÓÚµØÍ¼containerÔªËØµÄ×ø±êÎ»ÖÃ
-         * @return Point¶ÔÏóµÄÎ»ÖÃĞÅÏ¢
+         * @param {Event} e eå¯¹è±¡
+         * @param {Boolean} n æ˜¯å¦å‘ä¸ŠæŸ¥åˆ°ç›¸å¯¹äºåœ°å›¾containerå…ƒç´ çš„åæ ‡ä½ç½®
+         * @return Pointå¯¹è±¡çš„ä½ç½®ä¿¡æ¯
          */
         getDrawPoint : function(e, n) {
             e = window.event || e;
@@ -1852,9 +1852,9 @@ var BMapLib = window.BMapLib = BMapLib || {};
         },
  
         /**
-         * Í¸Ã÷¸²¸Ç²ãµÄÒş²Ø
+         * é€æ˜è¦†ç›–å±‚çš„éšè—
          *
-         * @return ÎŞ·µ»ØÖµ
+         * @return æ— è¿”å›å€¼
          */
         hide : function() {
             if (!this._map) {
@@ -1867,10 +1867,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
         },
  
         /**
-         * »ñÈ¡HTMLÈİÆ÷
+         * è·å–HTMLå®¹å™¨
          *
-         * @param {Map} map map¶ÔÏó
-         * @return HTMLÈİÆ÷ÔªËØ
+         * @param {Map} map mapå¯¹è±¡
+         * @return HTMLå®¹å™¨å…ƒç´ 
          */
         getDom : function(map) {
             if (!this._maskElement) {
@@ -1880,10 +1880,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
         },
  
         /**
-         * ÉèÖÃÊó±êÑùÊ½
+         * è®¾ç½®é¼ æ ‡æ ·å¼
          *
-         * @type {String} cursor Êó±êÑùÊ½
-         * @return ÎŞ·µ»ØÖµ
+         * @type {String} cursor é¼ æ ‡æ ·å¼
+         * @return æ— è¿”å›å€¼
          */
         _setCursor : function(cursor) {
             this._cursor = cursor || 'default';
@@ -1894,10 +1894,10 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
  
     /**
-     * Í£Ö¹ÊÂ¼şÃ°Åİ´«²¥£¬
-     * ±Õ°ü£¬¶ÔÍâ²»±©Â¶
+     * åœæ­¢äº‹ä»¶å†’æ³¡ä¼ æ’­ï¼Œ
+     * é—­åŒ…ï¼Œå¯¹å¤–ä¸æš´éœ²
      *
-     * @type {Event} e e¶ÔÏó
+     * @type {Event} e eå¯¹è±¡
      */
     function stopBubble(e){
         var e = window.event || e;
@@ -1905,17 +1905,17 @@ var BMapLib = window.BMapLib = BMapLib || {};
     };
 })();
 
-	// °Ù¶ÈµØÍ¼API¹¦ÄÜ
-	var map = new BMap.Map("allmap");    // ´´½¨MapÊµÀı
-	map.centerAndZoom(new BMap.Point(119.444, 32.215), 13);  // ³õÊ¼»¯µØÍ¼,ÉèÖÃÖĞĞÄµã×ø±êºÍµØÍ¼¼¶±ğ
-	map.addControl(new BMap.MapTypeControl());   //Ìí¼ÓµØÍ¼ÀàĞÍ¿Ø¼ş
-	map.setCurrentCity("Õò½­ÊĞ");          // ÉèÖÃµØÍ¼ÏÔÊ¾µÄ³ÇÊĞ ´ËÏîÊÇ±ØĞëÉèÖÃµÄ
+	// ç™¾åº¦åœ°å›¾APIåŠŸèƒ½
+	var map = new BMap.Map("allmap");    // åˆ›å»ºMapå®ä¾‹
+	map.centerAndZoom(new BMap.Point(119.444, 32.215), 13);  // åˆå§‹åŒ–åœ°å›¾,è®¾ç½®ä¸­å¿ƒç‚¹åæ ‡å’Œåœ°å›¾çº§åˆ«
+	map.addControl(new BMap.MapTypeControl());   //æ·»åŠ åœ°å›¾ç±»å‹æ§ä»¶
+	map.setCurrentCity("é•‡æ±Ÿå¸‚");          // è®¾ç½®åœ°å›¾æ˜¾ç¤ºçš„åŸå¸‚ æ­¤é¡¹æ˜¯å¿…é¡»è®¾ç½®çš„
 	map.enableScrollWheelZoom(true);
 	var myDistanceToolObject = new BMapLib.DistanceTool(map, {lineStroke : 2});
 	map.addEventListener("click",function(e){
 	$('#myModal').modal('show');
-	$("#X").attr("value",e.point.lng);// Ìî³äÄÚÈİ
-	$("#Y").attr("value",e.point.lat);// Ìî³äÄÚÈİ
+	$("#X").attr("value",e.point.lng);// å¡«å……å†…å®¹
+	$("#Y").attr("value",e.point.lat);// å¡«å……å†…å®¹
 	});	
 	$("#clear").click(function(){
 	map.clearOverlays();  
@@ -1930,7 +1930,7 @@ var BMapLib = window.BMapLib = BMapLib || {};
 	PantoLocation($("#X").val(),$("#Y").val());
 });
 function myPrint(obj){
-    var newWindow=window.open("Õò½­.html","test");//´òÓ¡´°¿ÚÒª»»³ÉÒ³ÃæµÄurl
+    var newWindow=window.open("é•‡æ±Ÿ.html","test");//æ‰“å°çª—å£è¦æ¢æˆé¡µé¢çš„url
     var docStr = obj.innerHTML;
     newWindow.document.write(docStr);
     newWindow.document.close();
@@ -1945,18 +1945,18 @@ function PantoLocation(x,y)
 	geocodeSearch(point);
 	map.centerAndZoom(point, 12);
 	$('#myModal').modal('hide');
-	var marker = new BMap.Marker(point);  // ´´½¨±ê×¢
-	map.addOverlay(marker);              // ½«±ê×¢Ìí¼Óµ½µØÍ¼ÖĞ
+	var marker = new BMap.Marker(point);  // åˆ›å»ºæ ‡æ³¨
+	map.addOverlay(marker);              // å°†æ ‡æ³¨æ·»åŠ åˆ°åœ°å›¾ä¸­
 	marker.addEventListener("click",getAttr);
 	
 	function getAttr(){
-		var p = marker.getPosition();       //»ñÈ¡markerµÄÎ»ÖÃ
-		alert("µ±Ç°Î»ÖÃÊÇ" + p.lng + "," + p.lat);   
+		var p = marker.getPosition();       //è·å–markerçš„ä½ç½®
+		alert("å½“å‰ä½ç½®æ˜¯" + p.lng + "," + p.lat);   
 	}
   }
   else
   {
-  alert("ÊäÈëÓĞÎó");
+  alert("è¾“å…¥æœ‰è¯¯");
   }
 }
 function geocodeSearch(pt) { 
@@ -1964,32 +1964,32 @@ var myGeo = new BMap.Geocoder();
 myGeo.getLocation(pt, function (rs) { 
 var addComp = rs.addressComponents; 
  var opts = {
-	  position : pt,    // Ö¸¶¨ÎÄ±¾±ê×¢ËùÔÚµÄµØÀíÎ»ÖÃ
-	  offset   : new BMap.Size(-90, -70)    //ÉèÖÃÎÄ±¾Æ«ÒÆÁ¿
+	  position : pt,    // æŒ‡å®šæ–‡æœ¬æ ‡æ³¨æ‰€åœ¨çš„åœ°ç†ä½ç½®
+	  offset   : new BMap.Size(-90, -70)    //è®¾ç½®æ–‡æœ¬åç§»é‡
 	}
-	var label = new BMap.Label("¶«¾­:"+pt.lng+"±±Î³:"+pt.lat+"</br>"+addComp.province + ", " + addComp.city + ", " + addComp.district+", "+addComp.street, opts);  // ´´½¨ÎÄ±¾±ê×¢¶ÔÏó
+	var label = new BMap.Label("ä¸œç»:"+pt.lng+"åŒ—çº¬:"+pt.lat+"</br>"+addComp.province + ", " + addComp.city + ", " + addComp.district+", "+addComp.street, opts);  // åˆ›å»ºæ–‡æœ¬æ ‡æ³¨å¯¹è±¡
 		label.setStyle({
 			 color : "red",
 			 fontSize : "12px",
 			 height : "40px",
 			 lineHeight : "20px",
-			 fontFamily:"Î¢ÈíÑÅºÚ"
+			 fontFamily:"å¾®è½¯é›…é»‘"
 		 });
 	map.addOverlay(label); 
 }); 
 } 
 </script>
 
-<!-- ¼ÆËãÁ½µãÖ®¼ä¾àÀëº¯Êı -->
+<!-- è®¡ç®—ä¸¤ç‚¹ä¹‹é—´è·ç¦»å‡½æ•° -->
 <script>
 function calculateDistance(lat1, lon1, lat2, lon2) {
-    // ½«½Ç¶È×ª»»Îª»¡¶È
+    // å°†è§’åº¦è½¬æ¢ä¸ºå¼§åº¦
     var radLat1 = (lat1 * Math.PI) / 180;
     var radLon1 = (lon1 * Math.PI) / 180;
     var radLat2 = (lat2 * Math.PI) / 180;
     var radLon2 = (lon2 * Math.PI) / 180;
 
-    // Haversine¹«Ê½
+    // Haversineå…¬å¼
     var dLat = radLat2 - radLat1;
     var dLon = radLon2 - radLon1;
     var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
@@ -1997,7 +1997,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
             Math.sin(dLon/2) * Math.sin(dLon/2);
     var c = 2 * Math.asin(Math.sqrt(a));
 
-    // µØÇò°ë¾¶£¨µ¥Î»£ºÇ§Ã×£©
+    // åœ°çƒåŠå¾„ï¼ˆå•ä½ï¼šåƒç±³ï¼‰
     var R = 6371;
     var distance = R * c;
 
@@ -2018,16 +2018,16 @@ function performCalculation() {
     var lon2 = parseFloat(document.getElementById('lon2').value);
 
     if (isNaN(lat1) || isNaN(lon1) || isNaN(lat2) || isNaN(lon2)) {
-        alert("ÇëÊäÈëÓĞĞ§µÄ¾­Î³¶ÈÊıÖµ£¡");
+        alert("è¯·è¾“å…¥æœ‰æ•ˆçš„ç»çº¬åº¦æ•°å€¼ï¼");
         return;
     }
 
     var distance = calculateDistance(lat1, lon1, lat2, lon2);
-    document.getElementById('result').innerText = "Á½µØÖ®¼äµÄ¾àÀëÊÇ: " + distance + " Ç§Ã×";
+    document.getElementById('result').innerText = "ä¸¤åœ°ä¹‹é—´çš„è·ç¦»æ˜¯: " + distance + " åƒç±³";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    // °ó¶¨´ò¿ª¶Ô»°¿òµÄ°´Å¥µã»÷ÊÂ¼ş
+    // ç»‘å®šæ‰“å¼€å¯¹è¯æ¡†çš„æŒ‰é’®ç‚¹å‡»äº‹ä»¶
     document.getElementById('open-dialog-btn').addEventListener('click', openCalculationDialog);
 });
 </script>
